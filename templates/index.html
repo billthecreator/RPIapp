@@ -9,13 +9,18 @@
             </div>
             <div class="body">
                 <div class="card_holder">
+
+                    {% for app in appList %}
+
                     <div class="card">
                         <div class="card_desc">
                             <div class="card_desc_title">
-                                First app name
+                                {{app.name}}
                             </div>
                         </div>
                     </div>
+
+                    {% endfor %}
                     <div class="card">
                         <div class="card_desc">
                             <div class="card_desc_title">
