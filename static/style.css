@@ -20,8 +20,7 @@ body {
   padding: 24px; }
   @media only screen and (max-width: 490px) {
     .body {
-      min-width: 100%;
-      margin: 0px; } }
+      padding: 0px; } }
 
 .card_holder {
   width: 100%;
