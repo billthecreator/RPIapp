@@ -49,8 +49,9 @@ body {
         display: inline-block;
         margin: 12px 0 6px 12px;
 
-        @media only screen and (min-width: 490px) {
-            width: 100%;
+        @media only screen and (max-width: 490px) {
+            min-width: 100%;
+            margin: 12px;
         }
 
         &.blue {

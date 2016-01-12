@@ -36,9 +36,10 @@ body {
     background-color: rgba(41, 141, 185, 0.4);
     display: inline-block;
     margin: 12px 0 6px 12px; }
-    @media only screen and (min-width: 490px) {
+    @media only screen and (max-width: 490px) {
       .card_holder .card {
-        width: 100%; } }
+        min-width: 100%;
+        margin: 12px; } }
     .card_holder .card.blue {
       background-color: rgba(41, 141, 185, 0.4); }
       .card_holder .card.blue:active {
