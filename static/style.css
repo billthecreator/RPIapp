@@ -78,6 +78,8 @@ body {
   max-width: 300px;
   min-width: 150px;
   margin: 0 auto; }
+  .login h2 {
+    font-weight: 600; }
   .login table {
     width: 100%;
     padding: 0;
@@ -85,10 +87,11 @@ body {
     .login table tr, .login table td {
       max-width: 100%;
       margin: 0;
-      padding: 0; }
+      padding: 4px 0; }
   .login input:not([type="submit"]) {
-    padding: 8px;
-    width: calc(100% - 16px);
+    padding: 8px 0;
+    text-indent: 8px;
+    width: 100%;
     font-size: 15px;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.3);
