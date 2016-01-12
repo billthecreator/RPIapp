@@ -49,6 +49,10 @@ body {
         display: inline-block;
         margin: 12px 0 6px 12px;
 
+        @media only screen and (min-width: 490px) {
+            width: 100%;
+        }
+
         &.blue {
             background-color: rgba($MAIN_COLOR, .4);
             &:active{
