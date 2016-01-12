@@ -71,4 +71,24 @@ body {
         font-size: 11px;
         line-height: 13px; }
 
+.login {
+  width: 100%;
+  max-width: 600px;
+  min-width: 250px;
+  margin: 0 auto; }
+  .login input:not([type]), .login [type="submit"] {
+    padding: 8px;
+    width: 100%;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2px; }
+  .login input[type="submit"] {
+    padding: 8px;
+    width: 100%;
+    font-size: 15px;
+    background-color: rgba(39, 174, 96, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2px; }
+
 /*# sourceMappingURL=style.css.map */
