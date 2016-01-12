@@ -29,7 +29,7 @@ body {
     padding: 24px;
 }
 .card_holder {
-    width: 100%;
+    width: 50%;
     display: inline;
 
     a {
@@ -84,6 +84,9 @@ body {
 
             .card_desc_title {
 
+            }
+            .card_desc_short {
+                font-size: 11px;
             }
         }
     }

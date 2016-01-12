@@ -20,7 +20,7 @@ body {
   padding: 24px; }
 
 .card_holder {
-  width: 100%;
+  width: 50%;
   display: inline; }
   .card_holder a {
     text-decoration: none;
@@ -58,5 +58,7 @@ body {
       font-weight: normal;
       line-height: 22px;
       background-color: white; }
+      .card_holder .card .card_desc .card_desc_short {
+        font-size: 11px; }
 
 /*# sourceMappingURL=style.css.map */

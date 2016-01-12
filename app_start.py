@@ -10,21 +10,25 @@ from flask import Flask, request, session, url_for, redirect, \
 appList = [
     {
         "name"  : "First app name",
+        "desc"  : "Short description about the first app",
         "url"   : "/firstApp",
         "color" : "blue"
     },
     {
         "name"  : "Second app name",
+        "desc"  : "Short description about the second app",
         "url"   : "/secondApp",
         "color" : "green"
     },
     {
         "name"  : "Third app name",
+        "desc"  : "Short description about the third app",
         "url"   : "/thirdApp",
         "color" : "yellow"
     },
     {
         "name"  : "Forth app name",
+        "desc"  : "Short description about the forth app",
         "url"   : "/fourthApp",
         "color" : "red"
     }
