@@ -10,19 +10,23 @@ from flask import Flask, request, session, url_for, redirect, \
 appList = [
     {
         "name"  : "First app name",
-        "url"   : "/firstApp"
+        "url"   : "/firstApp",
+        "color" : "blue"
     },
     {
         "name"  : "Second app name",
-        "url"   : "/secondApp"
+        "url"   : "/secondApp",
+        "color" : "green"
     },
     {
         "name"  : "Third app name",
-        "url"   : "/thirdApp"
+        "url"   : "/thirdApp",
+        "color" : "yellow"
     },
     {
         "name"  : "Forth app name",
-        "url"   : "/fourthApp"
+        "url"   : "/fourthApp",
+        "color" : "red"
     }
 ]
 
@@ -30,7 +34,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-#    session['apps'] = appList
     return render_template("index.html", appList=appList)
 
 @app.route("/test")

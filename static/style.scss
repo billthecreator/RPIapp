@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300|Bitter:400,700);
 
 $MAIN_COLOR: #298DB9;
+$GREEN_COLOR: #27AE60;
+$YELLOW_COLOR: #F1C40F;
+$RED_COLOR: #E74C3C;
 
 
 body {
@@ -38,6 +41,11 @@ body {
         background-color: rgba($MAIN_COLOR, .4);
         display: inline-block;
         margin: 10px;
+
+        &.blue {background-color: rgba($MAIN_COLOR, .4);}
+        &.green {background-color: rgba($GREEN_COLOR, .4);}
+        &.yellow {background-color: rgba($YELLOW_COLOR, .4);}
+        &.red {background-color: rgba($RED_COLOR, .4);}
 
         &:hover{
         }

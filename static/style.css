@@ -31,6 +31,14 @@ body {
     background-color: rgba(41, 141, 185, 0.4);
     display: inline-block;
     margin: 10px; }
+    .card_holder .card.blue {
+      background-color: rgba(41, 141, 185, 0.4); }
+    .card_holder .card.green {
+      background-color: rgba(39, 174, 96, 0.4); }
+    .card_holder .card.yellow {
+      background-color: rgba(241, 196, 15, 0.4); }
+    .card_holder .card.red {
+      background-color: rgba(231, 76, 60, 0.4); }
     .card_holder .card:active {
       background-color: rgba(41, 141, 185, 0.5); }
     .card_holder .card .card_desc {
