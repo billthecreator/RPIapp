@@ -21,7 +21,8 @@ body {
 
 .card_holder {
   width: 100%;
-  display: inline; }
+  display: inline;
+  margin: 0 auto; }
   .card_holder a {
     text-decoration: none;
     overflow: hidden; }
