@@ -75,14 +75,14 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  max-width: 600px;
-  min-width: 250px;
+  max-width: 300px;
+  min-width: 150px;
   margin: 0 auto; }
   .login table {
     width: 100%;
     padding: 0;
     margin: 0; }
-    .login table td {
+    .login table tr, .login table td {
       max-width: 100%;
       margin: 0;
       padding: 0; }
