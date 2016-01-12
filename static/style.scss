@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300|Bitter:400,700);
+
+$MAIN_COLOR: #298DB9;
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #eee;
+    color: black;
+    font-family: "Roboto";
+}
+
+.container {
+    width: 100%;
+    height: auto;
+
+}
+.header {
+    padding: 24px;
+    color: white;
+    background-color: $MAIN_COLOR;
+    font-family: "Bitter";
+}
+.body {
+    padding: 24px;
+}
+.card_holder {
+    width: 100%;
+    display: inline;
+}
+.card{
+    width: calc(33% - 30px);
+    min-width: 250px;
+    max-width: 400px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    border-radius: 2px;
+    background-color: rgba($MAIN_COLOR, .4);
+    display: inline-block;
+    margin: 10px
+}
+.card:hover{
+}
+.card:active{
+    background-color: rgba($MAIN_COLOR,.5);
+}
+.card_desc {
+    margin-top: 100%;
+    padding: 12px;
+    color: #212121;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 22px;
+    background-color: white;
+}
+.card_desc_title {
+
+}
