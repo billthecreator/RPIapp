@@ -20,7 +20,7 @@ body {
   padding: 24px; }
 
 .card_holder {
-  width: 50%;
+  width: 100%;
   display: inline; }
   .card_holder a {
     text-decoration: none;
@@ -51,7 +51,7 @@ body {
       .card_holder .card.red:active {
         background-color: rgba(231, 76, 60, 0.5); }
     .card_holder .card .card_desc {
-      margin-top: 100%;
+      margin-top: 50%;
       padding: 12px;
       color: #212121;
       font-size: 15px;
