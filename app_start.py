@@ -30,7 +30,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template(url_for("index.html", appList))
+    session['apps'] = appList
+    return redirect(url_for("/"))
 
 @app.route("/test")
 def test():
