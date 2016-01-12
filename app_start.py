@@ -76,6 +76,8 @@ def init_db():
 
 @app.route("/")
 def index():
+    if not session.get('logged_in'):
+        return render_template('login.html')
     return render_template("index.html", appList=appList)
 
 
