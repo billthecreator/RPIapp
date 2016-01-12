@@ -4,7 +4,8 @@ import time
 from sqlite3 import dbapi2 as sqlite3
 from hashlib import md5
 from datetime import datetime
-from flask import Flask, render_template
+from flask import Flask, request, session, url_for, redirect, \
+     render_template, abort, g, flash, _app_ctx_stack
 
 appList = [
     {
@@ -29,7 +30,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html", appList)
+    return render_template(url_for("index.html", appList))
 
 @app.route("/test")
 def test():
