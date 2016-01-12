@@ -32,6 +32,11 @@ body {
     width: 100%;
     display: inline;
 
+    a {
+        text-decoration: none;
+        overflow: hidden;
+    }
+
     .card{
         width: calc(33% - 30px);
         min-width: 250px;
@@ -42,16 +47,31 @@ body {
         display: inline-block;
         margin: 10px;
 
-        &.blue {background-color: rgba($MAIN_COLOR, .4);}
-        &.green {background-color: rgba($GREEN_COLOR, .4);}
-        &.yellow {background-color: rgba($YELLOW_COLOR, .4);}
-        &.red {background-color: rgba($RED_COLOR, .4);}
+        &.blue {
+            background-color: rgba($MAIN_COLOR, .4);
+            &:active{
+                background-color: rgba($MAIN_COLOR,.5);
+            }
+        }
+        &.green {
+            background-color: rgba($GREEN_COLOR, .4);
+            &:active{
+                background-color: rgba($GREEN_COLOR,.5);
+            }
+        }
+        &.yellow {
+            background-color: rgba($YELLOW_COLOR, .4);
+            &:active{
+                background-color: rgba($YELLOW_COLOR,.5);
+            }
+        }
+        &.red {
+            background-color: rgba($RED_COLOR, .4);
+            &:active{
+                background-color: rgba($RED_COLOR,.5);
+            }
+        }
 
-        &:hover{
-        }
-        &:active{
-            background-color: rgba($MAIN_COLOR,.5);
-        }
 
         .card_desc {
             margin-top: 100%;
