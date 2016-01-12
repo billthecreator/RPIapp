@@ -54,7 +54,7 @@ body {
         margin: 12px 0 6px 12px;
 
         @media only screen and (max-width: 490px) {
-            min-width: 100%;
+            min-width: calc(100% - 24px);
             margin: 12px;
         }
 

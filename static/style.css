@@ -41,7 +41,7 @@ body {
     margin: 12px 0 6px 12px; }
     @media only screen and (max-width: 490px) {
       .card_holder .card {
-        min-width: 100%;
+        min-width: calc(100% - 24px);
         margin: 12px; } }
     .card_holder .card.blue {
       background-color: rgba(41, 141, 185, 0.4); }
