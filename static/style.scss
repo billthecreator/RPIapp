@@ -5,6 +5,12 @@ $GREEN_COLOR: #27AE60;
 $YELLOW_COLOR: #F1C40F;
 $RED_COLOR: #E74C3C;
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 
 body {
     padding: 0;
@@ -110,7 +116,7 @@ body {
     margin: 0;
     max-width: 300px;
     min-width: 150px;
-    margin: 0 auto;
+    margin: 15vh auto;
 
     h2 {font-weight: 600;}
 

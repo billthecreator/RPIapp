@@ -1,4 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300|Bitter:400,700);
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none; }
+
 body {
   padding: 0;
   margin: 0;
@@ -77,7 +83,7 @@ body {
   margin: 0;
   max-width: 300px;
   min-width: 150px;
-  margin: 0 auto; }
+  margin: 15vh auto; }
   .login h2 {
     font-weight: 600; }
   .login table {
