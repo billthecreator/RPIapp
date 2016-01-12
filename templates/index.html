@@ -1,27 +1,18 @@
-<html>
-    <head>
-        <link rel="stylesheet" href='/static/style.css' />
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>_RPIapp_</h1>
-            </div>
-            <div class="body">
-                <div class="card_holder">
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
 
-                    {% for app in appList %}
-                    <a href="{{app.url}}">
-                        <div class="card {{app.color}}">
-                            <div class="card_desc">
-                                <div class="card_desc_title">{{app.name}}</div>
-                                <div class="card_desc_short">{{app.desc}}</div>
-                            </div>
-                        </div>
-                    </a>
-                    {% endfor %}
+{% block body %}
+    <div class="card_holder">
+
+        {% for app in appList %}
+        <a href="{{app.url}}">
+            <div class="card {{app.color}}">
+                <div class="card_desc">
+                    <div class="card_desc_title">{{app.name}}</div>
+                    <div class="card_desc_short">{{app.desc}}</div>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
