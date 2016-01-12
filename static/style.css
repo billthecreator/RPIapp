@@ -18,7 +18,8 @@ body {
   height: auto; }
 
 .header {
-  padding: 24px;
+  padding: 12px 24px;
+  font-size: .6em;
   color: white;
   background-color: #298DB9;
   font-family: "Bitter"; }
