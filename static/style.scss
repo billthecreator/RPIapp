@@ -28,31 +28,35 @@ body {
 .card_holder {
     width: 100%;
     display: inline;
-}
-.card{
-    width: calc(33% - 30px);
-    min-width: 250px;
-    max-width: 400px;
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
-    border-radius: 2px;
-    background-color: rgba($MAIN_COLOR, .4);
-    display: inline-block;
-    margin: 10px
-}
-.card:hover{
-}
-.card:active{
-    background-color: rgba($MAIN_COLOR,.5);
-}
-.card_desc {
-    margin-top: 100%;
-    padding: 12px;
-    color: #212121;
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 22px;
-    background-color: white;
-}
-.card_desc_title {
 
+    .card{
+        width: calc(33% - 30px);
+        min-width: 250px;
+        max-width: 400px;
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+        border-radius: 2px;
+        background-color: rgba($MAIN_COLOR, .4);
+        display: inline-block;
+        margin: 10px;
+
+        &:hover{
+        }
+        &:active{
+            background-color: rgba($MAIN_COLOR,.5);
+        }
+
+        .card_desc {
+            margin-top: 100%;
+            padding: 12px;
+            color: #212121;
+            font-size: 15px;
+            font-weight: normal;
+            line-height: 22px;
+            background-color: white;
+
+            .card_desc_title {
+
+            }
+        }
+    }
 }

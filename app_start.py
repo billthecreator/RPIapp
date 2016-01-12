@@ -1,4 +1,12 @@
+
+import time
+
+from sqlite3 import dbapi2 as sqlite3
+from hashlib import md5
+from datetime import datetime
 from flask import Flask, render_template
+
+
 app = Flask(__name__)
 
 @app.route("/")
