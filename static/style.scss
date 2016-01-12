@@ -39,14 +39,15 @@ body {
     }
 
     .card{
-        width: calc(33% - 30px);
-        min-width: 250px;
+        vertical-align: text-top;
+        width: 25%;
+        min-width: 200px;
         max-width: 400px;
         box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
         border-radius: 2px;
         background-color: rgba($MAIN_COLOR, .4);
         display: inline-block;
-        margin: 10px;
+        margin: 12px 0 6px 12px;
 
         &.blue {
             background-color: rgba($MAIN_COLOR, .4);
@@ -88,6 +89,7 @@ body {
             }
             .card_desc_short {
                 font-size: 11px;
+                line-height:13px;
             }
         }
     }
