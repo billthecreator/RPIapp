@@ -21,14 +21,21 @@ body {
   padding: 12px 24px;
   font-size: .6em;
   color: white;
+  display: inline-block;
+  width: calc(100% - 48px);
   background-color: #298DB9;
   font-family: "Bitter"; }
+  .header h1 {
+    display: inline-block; }
   .header .nav {
+    display: inline-block;
     float: right; }
     .header .nav ul {
       list-style: none; }
       .header .nav ul li {
-        padding: 8px; }
+        margin-left: 4px;
+        font-size: 12px;
+        color: white; }
 
 .body {
   padding: 24px; }
