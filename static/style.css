@@ -23,7 +23,7 @@ body {
   color: white;
   display: inline-block;
   width: calc(100% - 48px);
-  background-color: #3498DB;
+  background-color: #2980B9;
   font-family: "Bitter"; }
   .header h1 {
     display: inline-block; }
@@ -61,7 +61,7 @@ body {
     max-width: 400px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
     border-radius: 2px;
-    background-color: rgba(52, 152, 219, 0.4);
+    background-color: rgba(41, 128, 185, 0.4);
     display: inline-block;
     margin: 12px 0 6px 12px; }
     @media only screen and (max-width: 490px) {
@@ -69,9 +69,9 @@ body {
         min-width: calc(100% - 24px);
         margin: 12px; } }
     .card_holder .card.blue {
-      background-color: rgba(52, 152, 219, 0.4); }
+      background-color: rgba(41, 128, 185, 0.4); }
       .card_holder .card.blue:active {
-        background-color: rgba(52, 152, 219, 0.5); }
+        background-color: rgba(41, 128, 185, 0.5); }
     .card_holder .card.green {
       background-color: rgba(39, 174, 96, 0.4); }
       .card_holder .card.green:active {
@@ -116,7 +116,7 @@ body {
   .login h2 {
     font-weight: 200;
     font-size: 3.5em;
-    padding: 12px 0;
+    margin: 12px 0;
     text-align: center;
     font-family: 'Niconne';
     background-color: #333;
@@ -128,7 +128,9 @@ body {
   .login table {
     width: 100%;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    border-spacing: 0px;
+    border-collapse: separate; }
     .login table tr, .login table td {
       max-width: 100%;
       margin: 0;
@@ -147,6 +149,10 @@ body {
     font-size: 15px;
     background-color: rgba(39, 174, 96, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 2px; }
+    border-radius: 2px;
+    transition: all .2s ease; }
+    .login input[type="submit"]:hover {
+      background-color: rgba(39, 174, 96, 0.5);
+      transition: all .2s ease; }
 
 /*# sourceMappingURL=style.css.map */
