@@ -88,6 +88,7 @@ body {
   margin: 15vh auto; }
   .login h2 {
     font-weight: 600;
+    font-size: 3em;
     font-family: 'Niconne'; }
   .login table {
     width: 100%;
