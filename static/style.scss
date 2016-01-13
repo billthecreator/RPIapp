@@ -96,28 +96,43 @@ body {
             margin: 12px;
         }
 
+        $static:0.4;
+        $hover:0.7;
+        $active:0.55;
         &.blue {
-            background-color: rgba($MAIN_COLOR, .4);
+            background-color: rgba($MAIN_COLOR, $static);
+            &:hover{
+                background-color: rgba($MAIN_COLOR, $hover);
+            }
             &:active{
-                background-color: rgba($MAIN_COLOR,.5);
+                background-color: rgba($MAIN_COLOR, $active);
             }
         }
         &.green {
-            background-color: rgba($GREEN_COLOR, .4);
+            background-color: rgba($GREEN_COLOR, $static);
+            &:hover{
+                background-color: rgba($GREEN_COLOR, $hover);
+            }
             &:active{
-                background-color: rgba($GREEN_COLOR,.5);
+                background-color: rgba($GREEN_COLOR, $active);
             }
         }
         &.yellow {
-            background-color: rgba($YELLOW_COLOR, .4);
+            background-color: rgba($YELLOW_COLOR, $static);
+            &:hover{
+                background-color: rgba($YELLOW_COLOR, $hover);
+            }
             &:active{
-                background-color: rgba($YELLOW_COLOR,.5);
+                background-color: rgba($YELLOW_COLOR, $active);
             }
         }
         &.red {
-            background-color: rgba($RED_COLOR, .4);
+            background-color: rgba($RED_COLOR, $static);
+            &:hover{
+                background-color: rgba($RED_COLOR, $hover);
+            }
             &:active{
-                background-color: rgba($RED_COLOR,.5);
+                background-color: rgba($RED_COLOR, $active);
             }
         }
 
