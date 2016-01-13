@@ -37,9 +37,14 @@ body {
         margin-left: 4px;
         font-size: 12px;
         color: white; }
-        .header .nav ul li a, .header .nav ul li a:visited, .header .nav ul li a:hover, .header .nav ul li a:focused, .header .nav ul li a:active {
+        .header .nav ul li a {
           color: white !important;
           text-decoration: none !important; }
+          .header .nav ul li a:hover {
+            color: rgba(255, 255, 255, 0.5); }
+          .header .nav ul li a:visited, .header .nav ul li a:focused, .header .nav ul li a:active {
+            color: white !important;
+            text-decoration: none !important; }
 
 .body {
   padding: 24px; }

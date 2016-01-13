@@ -47,7 +47,18 @@ body {
                 font-size: 12px;
                 color: white;
 
-                a, a:visited, a:hover, a:focused, a:active{color: white !important; text-decoration: none !important;}
+                a{
+                    color:white !important;
+                    text-decoration: none !important;
+
+                    &:hover {
+                        color: rgba(white, .5);
+                    }
+                    &:visited, &:focused, &:active {
+                        color: white !important;
+                        text-decoration: none !important;
+                    }
+                }
             }
         }
     }
