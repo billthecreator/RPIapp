@@ -131,8 +131,8 @@ body {
     }
 }
 
-::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
-::selection { background: #5af; color: #fff; text-shadow: none; }
+::-moz-selection { background: rgba($GREEN_COLOR, .4);; color: #333; text-shadow: none; }
+::selection { background: rgba($GREEN_COLOR, .4);; color: #333; text-shadow: none; }
 
 .login{
     width: 100%;
@@ -170,17 +170,19 @@ body {
     }
 
     input:not([type="submit"]){
+        box-sizing: border-box;
         padding: 8px 0;
         text-indent: 8px;
-        width: 100%;
+        width: calc(100%);
         font-size: 15px;
         background-color: white;
         border: 1px solid rgba(black, .3);
         border-radius: 2px;
     }
     input[type="submit"] {
+        box-sizing: border-box;
         padding: 8px;
-        width: 100%;
+        width: calc(100%);
         font-size: 15px;
         background-color: rgba($GREEN_COLOR, .4);
         border: 1px solid rgba(black, .3);
