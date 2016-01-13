@@ -23,6 +23,12 @@ body {
   color: white;
   background-color: #298DB9;
   font-family: "Bitter"; }
+  .header .nav {
+    float: right; }
+    .header .nav ul {
+      list-style: none; }
+      .header .nav ul li {
+        padding: 8px; }
 
 .body {
   padding: 24px; }

@@ -32,6 +32,17 @@ body {
     color: white;
     background-color: $MAIN_COLOR;
     font-family: "Bitter";
+
+    .nav {
+        float: right;
+        ul{
+            list-style: none;
+
+            li{
+                padding: 8px;
+            }
+        }
+    }
 }
 .body {
     padding: 24px;
