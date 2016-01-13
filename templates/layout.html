@@ -13,6 +13,7 @@
         <h1>_RPIapp_</h1>
         <div class="nav">
             <ul>
+                <li><a href="{{ url_for('index') }}">dashboard</a></li>
                 {% if session.logged_in  %}
                 <li><a href="{{ url_for('logout') }}">log out</a></li>
                 {% endif %}
