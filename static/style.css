@@ -23,7 +23,7 @@ body {
   color: white;
   display: inline-block;
   width: calc(100% - 48px);
-  background-color: #298DB9;
+  background-color: #3498DB;
   font-family: "Bitter"; }
   .header h1 {
     display: inline-block; }
@@ -38,8 +38,8 @@ body {
         font-size: 12px;
         color: white; }
         .header .nav ul li a, .header .nav ul li a:visited, .header .nav ul li a:hover, .header .nav ul li a:focused, .header .nav ul li a:active {
-          color: white;
-          text-decoration: none; }
+          color: white !important;
+          text-decoration: none !important; }
 
 .body {
   padding: 24px; }
@@ -61,7 +61,7 @@ body {
     max-width: 400px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
     border-radius: 2px;
-    background-color: rgba(41, 141, 185, 0.4);
+    background-color: rgba(52, 152, 219, 0.4);
     display: inline-block;
     margin: 12px 0 6px 12px; }
     @media only screen and (max-width: 490px) {
@@ -69,9 +69,9 @@ body {
         min-width: calc(100% - 24px);
         margin: 12px; } }
     .card_holder .card.blue {
-      background-color: rgba(41, 141, 185, 0.4); }
+      background-color: rgba(52, 152, 219, 0.4); }
       .card_holder .card.blue:active {
-        background-color: rgba(41, 141, 185, 0.5); }
+        background-color: rgba(52, 152, 219, 0.5); }
     .card_holder .card.green {
       background-color: rgba(39, 174, 96, 0.4); }
       .card_holder .card.green:active {
