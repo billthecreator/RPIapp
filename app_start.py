@@ -85,6 +85,10 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
+
+    if session.get('logged_in'):
+        return redirect(url_for('index'))
+
     if request.method == 'POST':
         if request.form['username'] != app.config['USERNAME']:
             error = 'Invalid username'

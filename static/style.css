@@ -65,20 +65,28 @@ body {
     overflow: hidden; }
   .card_holder .card {
     vertical-align: text-top;
-    width: 25%;
+    width: calc((100% / 4) - 24px);
     min-width: 200px;
     max-width: 400px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
     border-radius: .6em;
     overflow: hidden;
     background-color: rgba(41, 128, 185, 0.4);
-    display: inline-block;
+    display: inline-flex;
     margin: 12px 0 6px 12px;
     transition: .2s all ease .05s; }
+    @media only screen and (max-width: 1024px) {
+      .card_holder .card {
+        width: calc((100% / 3) - 24px); } }
+    @media only screen and (max-width: 720px) {
+      .card_holder .card {
+        width: calc((100% / 2) - 24px); } }
     @media only screen and (max-width: 490px) {
       .card_holder .card {
-        min-width: calc(100% - 24px);
-        margin: 18px 12px; } }
+        width: calc(100% - 12px);
+        display: block;
+        max-width: 400px;
+        margin: 12px auto; } }
     .card_holder .card.blue {
       background-color: rgba(41, 128, 185, 0.4); }
       .card_holder .card.blue:hover {
@@ -105,6 +113,7 @@ body {
         background-color: rgba(231, 76, 60, 0.55); }
     .card_holder .card .card_desc {
       margin-top: 50%;
+      width: 100%;
       padding: 12px;
       color: #212121;
       font-size: 15px;
