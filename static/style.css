@@ -26,22 +26,26 @@ body {
   background-color: #2980B9;
   font-family: "Bitter"; }
   .header h1 {
-    display: inline-block; }
+    display: inline;
+    float: left; }
   .header .nav {
-    display: inline-block;
+    display: inline;
     float: right; }
     .header .nav ul {
-      list-style: none; }
+      list-style: none;
+      display: block; }
       .header .nav ul li {
-        padding: 8px 0;
         margin-left: 4px;
-        font-size: 12px;
+        padding: 6px 0;
+        font-size: 16px;
+        font-weight: 600;
         color: white; }
         .header .nav ul li a {
           color: white !important;
-          text-decoration: none !important; }
+          text-decoration: none !important;
+          transition: .1s all ease .2s; }
           .header .nav ul li a:hover {
-            color: rgba(255, 255, 255, 0.5); }
+            color: rgba(255, 255, 255, 0.5) !important; }
           .header .nav ul li a:visited, .header .nav ul li a:focused, .header .nav ul li a:active {
             color: white !important;
             text-decoration: none !important; }
@@ -64,15 +68,15 @@ body {
     width: 25%;
     min-width: 200px;
     max-width: 400px;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-    border-radius: 2px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
+    border-radius: .6em;
     background-color: rgba(41, 128, 185, 0.4);
     display: inline-block;
     margin: 12px 0 6px 12px; }
     @media only screen and (max-width: 490px) {
       .card_holder .card {
         min-width: calc(100% - 24px);
-        margin: 12px; } }
+        margin: 18px 12px; } }
     .card_holder .card.blue {
       background-color: rgba(41, 128, 185, 0.4); }
       .card_holder .card.blue:hover {
