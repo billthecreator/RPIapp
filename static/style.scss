@@ -55,7 +55,7 @@ body {
                 a{
                     color:white !important;
                     text-decoration: none !important;
-                    transition: .1s all ease .2s;
+                    transition: .2s all ease .05s;
 
                     &:hover {
                         color: rgba(white, .5) !important;
@@ -93,9 +93,11 @@ body {
         max-width: 400px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
         border-radius: .6em;
+        overflow: hidden;
         background-color: rgba($MAIN_COLOR, .4);
         display: inline-block;
         margin: 12px 0 6px 12px;
+        transition: .2s all ease .05s;
 
         @media only screen and (max-width: 490px) {
             min-width: calc(100% - 24px);
