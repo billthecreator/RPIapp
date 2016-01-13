@@ -13,25 +13,25 @@ appList = [
     {
         "name"  : "First app name",
         "desc"  : "Short description about the first app",
-        "url"   : "/firstApp",
+        "url"   : "/app/firstApp",
         "color" : "blue"
     },
     {
         "name"  : "Second app name",
         "desc"  : "Short description about the second app",
-        "url"   : "/secondApp",
+        "url"   : "/app/secondApp",
         "color" : "green"
     },
     {
         "name"  : "Third app name",
         "desc"  : "Short description about the third app",
-        "url"   : "/thirdApp",
+        "url"   : "/app/thirdApp",
         "color" : "yellow"
     },
     {
         "name"  : "Forth app name",
         "desc"  : "Short description about the forth app",
-        "url"   : "/fourthApp",
+        "url"   : "/app/fourthApp",
         "color" : "red"
     }
 ]
@@ -76,6 +76,12 @@ def init_db():
 
 @app.route("/")
 def index():
+    if not session.get('logged_in'):
+        return render_template('login.html')
+    return render_template("index.html", appList=appList)
+
+@app.route("/app/<appname>")
+def runApp(appname):
     if not session.get('logged_in'):
         return render_template('login.html')
     return render_template("index.html", appList=appList)
