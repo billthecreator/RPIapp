@@ -94,10 +94,10 @@ body {
     }
 
     h2 {
-        font-weight: 200;
-        font-size: 2.5em;
-        margin: 12px;
-        color: #333;
+        font-weight: 600;
+        font-size: 1em;
+        margin: 6px 12px;
+        color: #666;
     }
 }
 .card_holder {
@@ -135,6 +135,9 @@ body {
             display:block;
             max-width: 400px;
             margin: 12px auto;
+            .card_desc {
+                margin-top: 0;
+            }
         }
 
         $static:0.4;
