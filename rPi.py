@@ -96,6 +96,10 @@ def index():
         return render_template('login.html')
     return render_template("index.html", appList=appList)
 
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
 
 @app.route("/app/<appname>")
 def runApp(appname):
