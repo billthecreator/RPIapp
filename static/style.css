@@ -221,4 +221,10 @@ body {
       background-color: rgba(39, 174, 96, 0.9);
       transition: all .2s ease; }
 
+.footer {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  margin-top: 25px; }
+
 /*# sourceMappingURL=style.css.map */
