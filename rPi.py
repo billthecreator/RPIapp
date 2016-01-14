@@ -112,8 +112,8 @@ def index():
         return render_template('login.html')
     return render_template("index.html", appList=appList)
 
-@app.route("/signin")
-def signin():
+@app.route("/signup")
+def signup():
     return render_template("register.html")
 
 
