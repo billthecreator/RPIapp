@@ -63,13 +63,18 @@ body {
     font-weight: 200;
     font-size: 2.5em;
     margin: 12px;
-    font-family: 'Peddana';
+    font-family: 'Niconne';
     background-color: #333;
     color: transparent;
     text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.3);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text; }
+  .body h2 {
+    font-weight: 200;
+    font-size: 2.5em;
+    margin: 12px;
+    color: #333; }
 
 .card_holder {
   width: 100%;
