@@ -74,6 +74,10 @@ def init_db():
     db.commit()
 
 
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html'), 404
+
 @app.route("/")
 def index():
     if not session.get('logged_in'):
