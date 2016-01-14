@@ -106,9 +106,7 @@ body {
         width: calc(100% - 12px);
         display: block;
         max-width: 400px;
-        margin: 12px auto; }
-        .card_holder .card .card_desc {
-          margin-top: 0; } }
+        margin: 12px auto; } }
     .card_holder .card.blue {
       background-color: rgba(41, 128, 185, 0.4); }
       .card_holder .card.blue:hover {
@@ -142,6 +140,9 @@ body {
       font-weight: normal;
       line-height: 22px;
       background-color: white; }
+      @media only screen and (max-width: 490px) {
+        .card_holder .card .card_desc {
+          margin-top: 0; } }
       .card_holder .card .card_desc .card_desc_short {
         font-size: 11px;
         line-height: 13px; }

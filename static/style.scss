@@ -135,9 +135,6 @@ body {
             display:block;
             max-width: 400px;
             margin: 12px auto;
-            .card_desc {
-                margin-top: 0;
-            }
         }
 
         $static:0.4;
@@ -191,6 +188,9 @@ body {
             line-height: 22px;
             background-color: white;
 
+            @media only screen and (max-width: 490px) {
+                margin-top: 0;
+            }
             .card_desc_title {
 
             }
