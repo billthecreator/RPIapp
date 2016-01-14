@@ -1,6 +1,3 @@
-
-
-import os
 import time
 from sqlite3 import dbapi2 as sqlite3
 from hashlib import md5

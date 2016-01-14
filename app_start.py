@@ -1,5 +1,3 @@
-import pytest
-
 import os
 import rPi
 import tempfile
