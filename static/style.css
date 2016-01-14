@@ -114,29 +114,29 @@ body {
         max-width: 400px;
         margin: 6px auto; } }
     .card_holder .card.blue {
-      background-color: rgba(41, 128, 185, 0.4); }
+      background-color: #2980b9; }
       .card_holder .card.blue:hover {
         background-color: rgba(41, 128, 185, 0.7); }
       .card_holder .card.blue:active {
-        background-color: rgba(41, 128, 185, 0.55); }
+        background-color: rgba(41, 128, 185, 0.8); }
     .card_holder .card.green {
-      background-color: rgba(39, 174, 96, 0.4); }
+      background-color: #27ae60; }
       .card_holder .card.green:hover {
         background-color: rgba(39, 174, 96, 0.7); }
       .card_holder .card.green:active {
-        background-color: rgba(39, 174, 96, 0.55); }
+        background-color: rgba(39, 174, 96, 0.8); }
     .card_holder .card.yellow {
-      background-color: rgba(241, 196, 15, 0.4); }
+      background-color: #f1c40f; }
       .card_holder .card.yellow:hover {
         background-color: rgba(241, 196, 15, 0.7); }
       .card_holder .card.yellow:active {
-        background-color: rgba(241, 196, 15, 0.55); }
+        background-color: rgba(241, 196, 15, 0.8); }
     .card_holder .card.red {
-      background-color: rgba(231, 76, 60, 0.4); }
+      background-color: #e74c3c; }
       .card_holder .card.red:hover {
         background-color: rgba(231, 76, 60, 0.7); }
       .card_holder .card.red:active {
-        background-color: rgba(231, 76, 60, 0.55); }
+        background-color: rgba(231, 76, 60, 0.8); }
     .card_holder .card .card_desc {
       margin-top: 50%;
       width: 100%;
