@@ -1,121 +1,82 @@
-
+import pytest
 
 import os
-import time
-from sqlite3 import dbapi2 as sqlite3
-from hashlib import md5
-from datetime import datetime
-from flask import Flask, request, session, url_for, redirect, \
-     render_template, abort, g, flash, _app_ctx_stack
-from werkzeug import check_password_hash, generate_password_hash
+import rPi
+import tempfile
+import pytest
 
-appList = [
-    {
-        "name"  : "First app name",
-        "desc"  : "Short description about the first app",
-        "url"   : "/app/firstApp",
-        "color" : "blue"
-    },
-    {
-        "name"  : "Second app name",
-        "desc"  : "Short description about the second app",
-        "url"   : "/app/secondApp",
-        "color" : "green"
-    },
-    {
-        "name"  : "Third app name",
-        "desc"  : "Short description about the third app",
-        "url"   : "/app/thirdApp",
-        "color" : "yellow"
-    },
-    {
-        "name"  : "Forth app name",
-        "desc"  : "Short description about the forth app",
-        "url"   : "/app/fourthApp",
-        "color" : "red"
-    }
-]
+@pytest.fixture
+def client(request):
+    db_fd, rPi.app.config['DATABASE'] = tempfile.mkstemp()
+    client = rPi.app.test_client()
+    with rPi.app.app_context():
+        rPi.init_db()
 
-DATABASE    = '/tmp/RPIapp.db'
-SECRET_KEY  = 'yogurt'
-
-app = Flask(__name__)
-app.config.update(dict(
-    DATABASE=os.path.join(app.root_path, 'RPIapp.db'),
-    DEBUG=True,
-    SECRET_KEY='yogurt',
-    USERNAME='admin',
-    PASSWORD='apple'
-))
-app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
-
-def get_db():
-    """Opens a new database connection if there is none yet for the
-    current application context.
-    """
-    top = _app_ctx_stack.top
-    if not hasattr(top, 'sqlite_db'):
-        top.sqlite_db = sqlite3.connect(app.config['DATABASE'])
-        top.sqlite_db.row_factory = sqlite3.Row
-    return top.sqlite_db
-
-@app.teardown_appcontext
-def close_database(exception):
-    """Closes the database again at the end of the request."""
-    top = _app_ctx_stack.top
-    if hasattr(top, 'sqlite_db'):
-        top.sqlite_db.close()
-
-def init_db():
-    """Initializes the database."""
-    db = get_db()
-    with app.open_resource('schema.sql', mode='r') as f:
-        db.cursor().executescript(f.read())
-    db.commit()
+    def teardown():
+        """Get rid of the database again after each test."""
+        os.close(db_fd)
+        os.unlink(rPi.app.config['DATABASE'])
+    request.addfinalizer(teardown)
+    return client
 
 
-@app.errorhandler(404)
-def not_found(error):
-    return render_template('404.html'), 404
-
-@app.route("/")
-def index():
-    if not session.get('logged_in'):
-        return render_template('login.html')
-    return render_template("index.html", appList=appList)
-
-@app.route("/app/<appname>")
-def runApp(appname):
-    if not session.get('logged_in'):
-        return render_template('login.html')
-    return render_template("index.html", appList=appList)
+def register(client, username, password, password2=None, email=None):
+    """Helper function to register a user"""
+    if password2 is None:
+        password2 = password
+    if email is None:
+        email = username + '@example.com'
+    return client.post('/register', data={
+        'username':     username,
+        'password':     password,
+        'password2':    password2,
+        'email':        email,
+    }, follow_redirects=True)
 
 
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error = None
-
-    if session.get('logged_in'):
-        return redirect(url_for('index'))
-
-    if request.method == 'POST':
-        if request.form['username'] != app.config['USERNAME']:
-            error = 'Invalid username'
-        elif request.form['password'] != app.config['PASSWORD']:
-            error = 'Invalid password'
-        else:
-            session['logged_in'] = True
-            flash('You were logged in')
-            return redirect(url_for('index'))
-    return render_template('login.html', error=error)
+def login(client, username, password):
+    """Helper function to login"""
+    return client.post('/login', data={
+        'username': username,
+        'password': password
+    }, follow_redirects=True)
 
 
-@app.route('/logout')
-def logout():
-    session.pop('logged_in', None)
-    flash('You were logged out')
-    return redirect(url_for('index'))
+def register_and_login(client, username, password):
+    """Registers and logs in in one go"""
+    register(client, username, password)
+    return login(client, username, password)
 
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")
+
+def logout(client):
+    """Helper function to logout"""
+    return client.get('/logout', follow_redirects=True)
+
+
+def test_register(client):
+    """Make sure registering works"""
+    rv = register(client, 'user1', 'default')
+    assert b'You were successfully registered ' \
+           b'and can login now' in rv.data
+    rv = register(client, 'user1', 'default')
+    assert b'The username is already taken' in rv.data
+    rv = register(client, '', 'default')
+    assert b'You have to enter a username' in rv.data
+    rv = register(client, 'meh', '')
+    assert b'You have to enter a password' in rv.data
+    rv = register(client, 'meh', 'x', 'y')
+    assert b'The two passwords do not match' in rv.data
+    rv = register(client, 'meh', 'foo', email='broken')
+    assert b'You have to enter a valid email address' in rv.data
+
+
+def test_login_logout(client):
+    """Make sure logging in and logging out works"""
+    rv = register_and_login(client, 'user1', 'default')
+    assert b'You were logged in' in rv.data
+    rv = logout(client)
+    assert b'You were logged out' in rv.data
+    rv = login(client, 'user1', 'wrongpassword')
+    assert b'Invalid password' in rv.data
+    rv = login(client, 'user2', 'wrongpassword')
+    assert b'Invalid username' in rv.data
