@@ -38,7 +38,7 @@ SECRET_KEY  = 'yogurt'
 
 app = Flask(__name__)
 app.config.update(dict(
-    DATABASE='/tmp/RPIapp.db'),
+    DATABASE='/tmp/RPIapp.db',
     DEBUG=True,
     SECRET_KEY='yogurt',
     USERNAME='admin',
