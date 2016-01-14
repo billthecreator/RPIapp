@@ -62,6 +62,13 @@ def init_db():
     db.commit()
 
 
+@app.cli.command('initdb')
+def initdb_command():
+    """Creates the database tables."""
+    init_db()
+    print('Initialized the database.')
+
+
 def query_db(query, args=(), one=False):
     """Queries the database and returns a list of dictionaries."""
     cur = get_db().execute(query, args)
