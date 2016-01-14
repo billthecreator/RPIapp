@@ -63,6 +63,7 @@ def init_db():
 
 
 def query_db(query, args=(), one=False):
+    init_db()
     """Queries the database and returns a list of dictionaries."""
     cur = get_db().execute(query, args)
     rv = cur.fetchall()
