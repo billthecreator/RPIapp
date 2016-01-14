@@ -37,13 +37,13 @@ DATABASE    = '/tmp/RPIapp.db'
 SECRET_KEY  = 'yogurt'
 
 app = Flask(__name__)
-app.config.update(dict(
-    DATABASE='/tmp/RPIapp.db',
-    DEBUG=True,
-    SECRET_KEY='yogurt',
-    USERNAME='admin',
-    PASSWORD='apple'
-))
+
+DATABASE='/tmp/RPIapp.db',
+DEBUG=True,
+SECRET_KEY='yogurt',
+USERNAME='admin',
+PASSWORD='apple'
+
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 
