@@ -62,12 +62,12 @@ def init_db():
     db.commit()
 
 
-# @app.cli.command('initdb')
-# def initdb_command():
-#     """Creates the database tables."""
-#     init_db()
-#     print('Initialized the database.')
-#
+def get_user_id(username):
+    """Convenience method to look up the id for a username."""
+    rv = query_db('select user_id from user where username = ?',
+                  [username], one=True)
+    return rv[0] if rv else None
+
 
 def get_db():
     """Opens a new database connection if there is none yet for the
@@ -84,7 +84,7 @@ def close_db(error):
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
 
-        
+
 @app.before_request
 def before_request():
     g.user = None
