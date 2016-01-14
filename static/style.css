@@ -103,10 +103,12 @@ body {
         width: calc((100% / 2) - 24px); } }
     @media only screen and (max-width: 490px) {
       .card_holder .card {
-        width: calc(100% - 12px);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+        width: calc(100% - 6px);
+        border-radius: 2px;
         display: block;
         max-width: 400px;
-        margin: 12px auto; } }
+        margin: 6px auto; } }
     .card_holder .card.blue {
       background-color: rgba(41, 128, 185, 0.4); }
       .card_holder .card.blue:hover {
@@ -142,7 +144,8 @@ body {
       background-color: white; }
       @media only screen and (max-width: 490px) {
         .card_holder .card .card_desc {
-          margin-top: 0; } }
+          margin-top: 0;
+          margin-left: 12px; } }
       .card_holder .card .card_desc .card_desc_short {
         font-size: 11px;
         line-height: 13px; }

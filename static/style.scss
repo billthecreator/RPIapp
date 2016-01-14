@@ -131,10 +131,12 @@ body {
         }
 
         @media only screen and (max-width: 490px) {
-            width:calc(100% - 12px);
-            display:block;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+            width: calc(100% - 6px);
+            border-radius:2px;
+            display: block;
             max-width: 400px;
-            margin: 12px auto;
+            margin: 6px auto;
         }
 
         $static:0.4;
@@ -190,6 +192,7 @@ body {
 
             @media only screen and (max-width: 490px) {
                 margin-top: 0;
+                margin-left: 12px;
             }
             .card_desc_title {
 
