@@ -33,25 +33,35 @@ appList = [
     }
 ]
 
-DATABASE    = '/tmp/RPIapp.db'
-SECRET_KEY  = 'yogurt'
-
-app = Flask(__name__)
-
 DATABASE='/tmp/RPIapp.db',
 DEBUG=True,
 SECRET_KEY='yogurt',
 USERNAME='admin',
 PASSWORD='apple'
 
+
+app = Flask(__name__)
+app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 
-def connect_db():
-    """Connects to the specific database."""
-    rv = sqlite3.connect(app.config['DATABASE'])
-    rv.row_factory = sqlite3.Row
-    return rv
+def get_db():
+    """Opens a new database connection if there is none yet for the
+    current application context.
+    """
+    top = _app_ctx_stack.top
+    if not hasattr(top, 'sqlite_db'):
+        top.sqlite_db = sqlite3.connect(app.config['DATABASE'])
+        top.sqlite_db.row_factory = sqlite3.Row
+    return top.sqlite_db
+
+
+@app.teardown_appcontext
+def close_database(exception):
+    """Closes the database again at the end of the request."""
+    top = _app_ctx_stack.top
+    if hasattr(top, 'sqlite_db'):
+        top.sqlite_db.close()
 
 
 def init_db():
@@ -75,22 +85,6 @@ def get_user_id(username):
     rv = query_db('select user_id from user where username = ?',
                   [username], one=True)
     return rv[0] if rv else None
-
-
-def get_db():
-    """Opens a new database connection if there is none yet for the
-    current application context.
-    """
-    if not hasattr(g, 'sqlite_db'):
-        g.sqlite_db = connect_db()
-    return g.sqlite_db
-
-
-@app.teardown_appcontext
-def close_db(error):
-    """Closes the database again at the end of the request."""
-    if hasattr(g, 'sqlite_db'):
-        g.sqlite_db.close()
 
 
 @app.before_request
