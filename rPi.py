@@ -97,7 +97,7 @@ def index():
     return render_template("index.html", appList=appList)
 
 @app.route("/register")
-def register():
+def signin():
     return render_template("register.html")
 
 
@@ -159,7 +159,6 @@ def register():
               [request.form['username'], request.form['email'],
                generate_password_hash(request.form['password'])])
             db.commit()
-            flash('You were successfully registered and can login now')
             return redirect(url_for('login'))
     return render_template('register.html', error=error)
 
