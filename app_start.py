@@ -1,9 +1,8 @@
 import os
 import rPi
 import tempfile
-import pytest
 
-@pytest.fixture
+
 def client(request):
     db_fd, rPi.app.config['DATABASE'] = tempfile.mkstemp()
     client = rPi.app.test_client()
