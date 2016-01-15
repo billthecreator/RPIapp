@@ -108,7 +108,7 @@ def not_found(error):
 def index():
     if not g.user:
         return render_template('login.html')
-    return render_template("index.html", appList=appList)
+    return render_template("index.html", appList=query_db('select * from apps'))
 
 @app.route("/signup")
 def signup():
@@ -117,9 +117,7 @@ def signup():
 
 @app.route("/app/<appname>")
 def runApp(appname):
-    if not g.user:
-        return render_template('login.html')
-    return render_template("index.html", appList=appList)
+    return redirect(url_for('index'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
