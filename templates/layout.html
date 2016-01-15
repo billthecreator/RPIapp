@@ -11,9 +11,12 @@
     {% block header %}
     <div class="header">
         <div class="nav">
+          <ul style="float:left;">
+            <li>{{ g.user.username }}</li>
+          </ul>
             <ul>
                 <li><a href="{{ url_for('index') }}">dashboard</a></li>
-                {% if g.use  %}
+                {% if g.user  %}
                 <li><a href="{{ url_for('logout') }}">log out</a></li>
                 {% endif %}
             </ul>
