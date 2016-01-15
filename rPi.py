@@ -117,7 +117,7 @@ def signup():
 
 @app.route("/app/<appname>")
 def runApp(appname):
-    if not session.get('logged_in'):
+    if not g.user:
         return render_template('login.html')
     return render_template("index.html", appList=appList)
 
@@ -145,8 +145,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    session.pop('logged_in', None)
-    flash('You were logged out')
+    session.pop('user_id', None)
     return redirect(url_for('index'))
 
 
