@@ -11,10 +11,10 @@
     {% block header %}
     <div class="header">
         <div class="nav">
-          <ul style="float:left;">
-            <li style="float:left;">{{ g.user.username.upper() }}</li>
+          <ul class="ul_left">
+            <li>{{ g.user.username.upper() }}</li>
           </ul>
-            <ul>
+            <ul class="ul_right">
                 <li><a href="{{ url_for('index') }}">dashboard</a></li>
                 {% if g.user  %}
                 <li><a href="{{ url_for('logout') }}">log out</a></li>

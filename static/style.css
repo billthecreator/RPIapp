@@ -40,12 +40,18 @@ body {
     width: 100%; }
     .header .nav ul {
       list-style: none;
-      font-size: 16px;
-      float: right; }
+      font-size: 16px; }
+      .header .nav ul.ul_right {
+        float: right; }
+        .header .nav ul.ul_right li {
+          margin-left: 0; }
+      .header .nav ul.ul_left {
+        float: left; }
+        .header .nav ul.ul_left li {
+          margin-left: 1em; }
       .header .nav ul li {
         float: left;
         position: relative;
-        margin-left: 1em;
         padding: 6px 0;
         font-weight: 600;
         color: white; }
