@@ -33,11 +33,11 @@ appList = [
     }
 ]
 
-DATABASE='/tmp/RPIapp.db',
-DEBUG=True,
-SECRET_KEY='yogurt',
-USERNAME='admin',
-PASSWORD='apple'
+DATABASE='/tmp/RPIapp.db'
+DEBUG=True
+SECRET_KEY=str('yogurt')
+USERNAME=str('admin')
+PASSWORD=str('apple')
 
 
 app = Flask(__name__)
@@ -165,8 +165,8 @@ def register():
         else:
             db = get_db()
             db.execute('''insert into user (username, email, pw_hash) values (?, ?, ?)''',
-              (request.form['username'], request.form['email'],
-               generate_password_hash(request.form['password'])))
+              [request.form['username'], request.form['email'],
+               generate_password_hash(request.form['password'])])
             db.commit()
             return redirect(url_for('login'))
     return render_template('register.html', error=error)
