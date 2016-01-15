@@ -122,17 +122,19 @@ def runApp(appname):
 def login():
     error = None
 
-    if session.get('logged_in'):
+    if g.user:
         return redirect(url_for('index'))
 
     if request.method == 'POST':
-        if request.form['username'] != app.config['USERNAME']:
+        user = query_db('''select * from user where
+            username = ?''', [request.form['username']], one=True)
+        if user is None:
             error = 'Invalid username'
-        elif request.form['password'] != app.config['PASSWORD']:
+        elif not check_password_hash(user['pw_hash'],
+                                     request.form['password']):
             error = 'Invalid password'
         else:
-            session['logged_in'] = True
-            flash('You were logged in')
+            session['user_id'] = user['user_id']
             return redirect(url_for('index'))
     return render_template('login.html', error=error)
 
