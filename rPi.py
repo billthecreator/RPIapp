@@ -35,9 +35,7 @@ appList = [
 
 DATABASE='/tmp/RPIapp.db'
 DEBUG=True
-SECRET_KEY=str('yogurt')
-USERNAME=str('admin')
-PASSWORD=str('apple')
+SECRET_KEY='yogurt'
 
 
 app = Flask(__name__)
@@ -72,8 +70,14 @@ def init_db():
     db.commit()
 
 
-def query_db(query, args=(), one=False):
+# @app.cli.command('initdb')
+def initdb_command():
+    """Creates the database tables."""
     init_db()
+    print('Initialized the database.')
+
+
+def query_db(query, args=(), one=False):
     """Queries the database and returns a list of dictionaries."""
     cur = get_db().execute(query, args)
     rv = cur.fetchall()
