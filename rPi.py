@@ -106,7 +106,7 @@ def not_found(error):
 
 @app.route("/")
 def index():
-    if not session.get('logged_in'):
+    if not g.user:
         return render_template('login.html')
     return render_template("index.html", appList=appList)
 
