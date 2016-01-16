@@ -6,7 +6,7 @@ from flask import Flask, request, session, url_for, redirect, \
      render_template, abort, g, flash, _app_ctx_stack
 from werkzeug import check_password_hash, generate_password_hash
 
-appList = [
+#appList = [
 #    {
 #        "name"  : "First app name",
 #        "desc"  : "Short description about the first app",
