@@ -156,10 +156,13 @@ body {
         }
 
 
-
         $static:1;
         $hover:0.7;
         $active:0.8;
+
+        &:hover{.card_desc_image {opacity: $hover;}}
+        &:active{.card_desc_image {opacity: $active;}}
+
         .card_desc_image {
             width:100%;
             height: 100%;
@@ -170,8 +173,6 @@ body {
             opacity: $static;
             transition: .2s opacity ease .05s;
 
-            &:hover{opacity: $hover;}
-            &:active{opacity: $active;}
         }
 
         .card_desc {
