@@ -20,6 +20,9 @@
             <div class="form_title">
                 Add App
             </div>
+            <div class="error">
+                {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
+            </div>
             <form method="post" action="{{ url_for('admin_add_app') }}">
                 <table>
                     <tr>
