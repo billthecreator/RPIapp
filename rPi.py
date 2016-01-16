@@ -6,32 +6,6 @@ from flask import Flask, request, session, url_for, redirect, \
      render_template, abort, g, flash, _app_ctx_stack
 from werkzeug import check_password_hash, generate_password_hash
 
-#appList = [
-#    {
-#        "name"  : "First app name",
-#        "desc"  : "Short description about the first app",
-#        "url"   : "/app/firstApp",
-#        "color" : "blue"
-#    },
-#    {
-#        "name"  : "Second app name",
-#        "desc"  : "Short description about the second app",
-#        "url"   : "/app/secondApp",
-#        "color" : "green"
-#    },
-#    {
-#        "name"  : "Third app name",
-#        "desc"  : "Short description about the third app",
-#        "url"   : "/app/thirdApp",
-#        "color" : "yellow"
-#    },
-#    {
-#        "name"  : "Forth app name",
-#        "desc"  : "Short description about the forth app",
-#        "url"   : "/app/fourthApp",
-#        "color" : "red"
-#    }
-#]
 
 DATABASE='/tmp/RPIapp.db'
 DEBUG=True
