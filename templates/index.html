@@ -4,7 +4,6 @@
 {% block body %}
     <div class="card_holder">
         <h1>Raspberry Pi</h1>
-        <h2>Select an app, {{ g.user.username }}</h2>
         {% for app in appList %}
         <a href="{{app.url}}">
             <div class="card" style="background-color: {{app.color}};">
