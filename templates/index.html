@@ -6,8 +6,9 @@
         <h1>Raspberry Pi</h1>
         {% for app in appList %}
         <a href="{{app.url}}">
-            <div class="card" style="background-color: {{app.color}};">
+            <div class="card">
                 <div class="card_desc">
+                    <div class="card_desc_image" style="background-color:{{app.color}};"></div>
                     <div class="card_desc_title">{{app.name}}</div>
                     <div class="card_desc_short">{{app.description}}</div>
                 </div>
