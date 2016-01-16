@@ -118,6 +118,24 @@ def signup():
 
 @app.route("/submitApp")
 def admin_add_app():
+    if g.user:
+        return redirect(url_for('index'))
+    error = None
+    appcolor = request.form['appcolor']
+    if request.method == 'POST':
+        if not request.form['appname']:
+            error = 'You have to enter a name for the app'
+        elif not request.form['appurl']:
+            error = 'You have to enter a url'
+        elif not request.form['appcolor']:
+            appcolor='#888'
+        else:
+            db = get_db()
+            db.execute('''insert into apps (name, url, color) values (?, ?, ?)''',
+              [request.form['appname'], request.form['appurl'], appcolor])
+            db.commit()
+            return redirect(url_for('index'))
+
     return render_template("/admin/app_add.html")
 
 

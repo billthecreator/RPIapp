@@ -7,7 +7,7 @@
         <h2>Select an app, {{ g.user.username }}</h2>
         {% for app in appList %}
         <a href="{{app.url}}">
-            <div class="card {{app.color}}">
+            <div class="card" style="background-color: {{app.color}};">
                 <div class="card_desc">
                     <div class="card_desc_title">{{app.name}}</div>
                     <div class="card_desc_short">{{app.desc}}</div>
@@ -20,28 +20,30 @@
             <div class="form_title">
                 Add App
             </div>
-            <table>
-                <tr>
-                    <td>
-                        <input type="text" placeholder="App Name">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" placeholder="Url" value="/app/">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" placeholder="Color">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value="Add">
-                    </td>
-                </tr>
-            </table>
+            <form method="post" action="{{ url_for('admin_add_app') }}">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="App Name" name="appname">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Url" value="/app/" name="appurl">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Color" name="appcolor">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Add">
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
         {% endif %}
     </div>
