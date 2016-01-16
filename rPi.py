@@ -118,8 +118,8 @@ def signup():
 
 @app.route("/admin_add_app", methods=['GET', 'POST'])
 def admin_add_app():
-    if g.user:
-        return redirect(url_for('index'))
+#    if g.user:
+#        return redirect(url_for('index'))
     error = None
     appcolor = request.form['appcolor']
     if request.method == 'POST':
