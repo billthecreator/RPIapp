@@ -117,13 +117,12 @@ def admin_add_app():
 
 @app.route("/delete/<appid>")
 def deleteApp(appid):
-
     getUserId = get_user_id('admin')
-
     if getUserId != session['user_id']:
         return render_template('404.html')
-
-    query_db('delete from apps where appID =? ', [appid])
+    db = get_db()
+    db = execute('delete from apps where appID =? ', [appid])
+    db.commit()
 
 @app.route("/app/<appname>")
 def runApp(appname):
