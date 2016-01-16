@@ -5,18 +5,18 @@
     <div class="card_holder">
         <h1>Raspberry Pi</h1>
         {% for app in appList %}
-        <a href="{{app.url}}">
             <div class="card">
                 {% if g.user.username == "admin" %}
                 <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
                 {% endif %}
                 <div class="card_desc_image" style="background-color:{{app.color}};"></div>
-                <div class="card_desc">
-                    <div class="card_desc_title">{{app.name}}</div>
-                    <div class="card_desc_short">{{app.description}}</div>
-                </div>
+                <a href="{{app.url}}">
+                    <div class="card_desc">
+                        <div class="card_desc_title">{{app.name}}</div>
+                        <div class="card_desc_short">{{app.description}}</div>
+                    </div>
+                </a>
             </div>
-        </a>
         {% endfor %}
         {% if g.user.username == "admin" %}
         <div class="form_box">
