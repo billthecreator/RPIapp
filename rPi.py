@@ -118,8 +118,10 @@ def admin_add_app():
 @app.route("/delete/<appid>")
 def deleteApp(appid):
 
-    if not query_db('select user_id from user where username = admin') == session['user_id']:
-        return render_template('404.html'), 404
+    getUserId = get_user_id('admin')
+
+    if getUserId != session['user_id']:
+        return render_template('404.html')
 
     rv = query_db('select appId from apps where appId = ?',
                   [appid], one=True)
