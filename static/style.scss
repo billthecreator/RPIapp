@@ -297,9 +297,13 @@ body {
 
 .form_box{
     width: calc(100% - 12px);
-    max-width: 400px;
-    min-width: 150px;
-    padding: 12px 6px;
+    max-width: 500px;
+    min-width: 50px;
+    padding: 6px;
+    border:1px solid #999;
+    border-radius:2px;
+    margin: 3em auto;
+    background-color: #ddd;
 
 
     .form_title{
@@ -309,12 +313,15 @@ body {
 
     }
     form{
-        input:not([type="submit"]){
+
+        input:not([type="submit"]), textarea{
             box-sizing: border-box;
+            resize: none;
             padding: 8px 0;
             text-indent: 8px;
             width: calc(100%);
             font-size: 15px;
+            font-family: 'Roboto';
             background-color: white;
             border: 1px solid rgba(black, .3);
             border-radius: 2px;
