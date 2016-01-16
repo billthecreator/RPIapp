@@ -103,7 +103,6 @@ body {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
     border-radius: .6em;
     overflow: hidden;
-    background-color: rgba(41, 128, 185, 0.4);
     display: inline-flex;
     position: relative;
     margin: 12px 0 6px 12px;
@@ -127,31 +126,14 @@ body {
       height: 100%;
       position: absolute;
       left: 0;
-      top: 0; }
-    .card_holder .card.blue {
-      background-color: #2980b9; }
-      .card_holder .card.blue:hover {
-        background-color: rgba(41, 128, 185, 0.7); }
-      .card_holder .card.blue:active {
-        background-color: rgba(41, 128, 185, 0.8); }
-    .card_holder .card.green {
-      background-color: #27ae60; }
-      .card_holder .card.green:hover {
-        background-color: rgba(39, 174, 96, 0.7); }
-      .card_holder .card.green:active {
-        background-color: rgba(39, 174, 96, 0.8); }
-    .card_holder .card.yellow {
-      background-color: #f1c40f; }
-      .card_holder .card.yellow:hover {
-        background-color: rgba(241, 196, 15, 0.7); }
-      .card_holder .card.yellow:active {
-        background-color: rgba(241, 196, 15, 0.8); }
-    .card_holder .card.red {
-      background-color: #e74c3c; }
-      .card_holder .card.red:hover {
-        background-color: rgba(231, 76, 60, 0.7); }
-      .card_holder .card.red:active {
-        background-color: rgba(231, 76, 60, 0.8); }
+      top: 0;
+      z-index: -1;
+      opacity: 1;
+      transition: .2s opacity ease .05s; }
+      .card_holder .card .card_desc_image:hover {
+        opacity: 0.7; }
+      .card_holder .card .card_desc_image:active {
+        opacity: 0.8; }
     .card_holder .card .card_desc {
       margin-top: 50%;
       width: 100%;

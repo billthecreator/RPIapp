@@ -134,7 +134,6 @@ body {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
         border-radius: .6em;
         overflow: hidden;
-        background-color: rgba(41, 128, 185, 0.4);
         display: inline-flex;
         position: relative;
         margin: 12px 0 6px 12px;
@@ -157,54 +156,23 @@ body {
         }
 
 
+
+        $static:1;
+        $hover:0.7;
+        $active:0.8;
         .card_desc_image {
             width:100%;
             height: 100%;
             position: absolute;
             left:0;
             top: 0;
-        }
+            z-index: -1;
+            opacity: $static;
+            transition: .2s opacity ease .05s;
 
-        $static:1;
-        $hover:0.7;
-        $active:0.8;
-        &.blue {
-            background-color: rgba($MAIN_COLOR, $static);
-            &:hover{
-                background-color: rgba($MAIN_COLOR, $hover);
-            }
-            &:active{
-                background-color: rgba($MAIN_COLOR, $active);
-            }
+            &:hover{opacity: $hover;}
+            &:active{opacity: $active;}
         }
-        &.green {
-            background-color: rgba($GREEN_COLOR, $static);
-            &:hover{
-                background-color: rgba($GREEN_COLOR, $hover);
-            }
-            &:active{
-                background-color: rgba($GREEN_COLOR, $active);
-            }
-        }
-        &.yellow {
-            background-color: rgba($YELLOW_COLOR, $static);
-            &:hover{
-                background-color: rgba($YELLOW_COLOR, $hover);
-            }
-            &:active{
-                background-color: rgba($YELLOW_COLOR, $active);
-            }
-        }
-        &.red {
-            background-color: rgba($RED_COLOR, $static);
-            &:hover{
-                background-color: rgba($RED_COLOR, $hover);
-            }
-            &:active{
-                background-color: rgba($RED_COLOR, $active);
-            }
-        }
-
 
         .card_desc {
             margin-top: 50%;
