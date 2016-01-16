@@ -117,7 +117,8 @@ def admin_add_app():
 
 @app.route("/delete/<appid>")
 def deleteApp(appid):
-    if not str(g.user.username).upper() == str('admin').upper():
+
+    if query_db('select user_id from user where username = ?', ['admin']) != session['user_id']:
         return redirect(url_for('not_found'))
 
     rv = query_db('select appId from apps where appId = ?',
