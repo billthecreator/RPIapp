@@ -123,10 +123,7 @@ def deleteApp(appid):
     if getUserId != session['user_id']:
         return render_template('404.html')
 
-    rv = query_db('select appId from apps where appId = ?',
-                  [appid], one=True)
-    if rv:
-        query_db('delete from apps where appID =? ', [appid])
+    query_db('delete from apps where appID =? ', [appid])
 
 @app.route("/app/<appname>")
 def runApp(appname):
