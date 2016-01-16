@@ -120,9 +120,10 @@ def deleteApp(appid):
     getUserId = get_user_id('admin')
     if getUserId != session['user_id']:
         return render_template('404.html')
-    db = get_db()
-    db = execute('delete from apps where appID =? ', [appid])
-    db.commit()
+    else:
+        db = get_db()
+        db.execute('delete from apps where appID =? ', [appid])
+        db.commit()
 
 @app.route("/app/<appname>")
 def runApp(appname):
