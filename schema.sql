@@ -12,5 +12,6 @@ create table apps (
     name text not null,
     description text not null,
     url text not null,
+    imageurl text,
     color text
 );
