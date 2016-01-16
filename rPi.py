@@ -122,8 +122,10 @@ def deleteApp(appid):
         return render_template('404.html')
     else:
         db = get_db()
-        db.execute('delete from apps where appID =? ', [appid])
+        db.execute('delete from apps where appID=? ', [appid])
         db.commit()
+    return redirect(url_for('index'))
+
 
 @app.route("/app/<appname>")
 def runApp(appname):
