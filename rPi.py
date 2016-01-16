@@ -116,7 +116,7 @@ def signup():
     return render_template("register.html")
 
 
-@app.route("/admin_add_app")
+@app.route("/admin_add_app", methods=['GET', 'POST'])
 def admin_add_app():
     if g.user:
         return redirect(url_for('index'))
@@ -132,11 +132,14 @@ def admin_add_app():
         else:
             db = get_db()
             db.execute('''insert into apps (name, description, url, color) values (?, ?, ?, ?)''',
-              [request.form['appname'], request.form['description'], request.form['appurl'], appcolor])
+              [request.form['appname'],
+               request.form['description'],
+               request.form['appurl'],
+               appcolor])
             db.commit()
             return redirect(url_for('index'))
 
-    return redirect(url_for('index'))
+    return redirect(url_for('index'), error=error)
 
 
 @app.route("/app/<appname>")
