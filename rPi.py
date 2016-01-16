@@ -122,12 +122,13 @@ def admin_add_app():
 #        return redirect(url_for('index'))
     error = None
     appcolor = request.form['appcolor']
+
     if request.method == 'POST':
         if not request.form['appname']:
             error = 'You have to enter a name for the app'
         elif not request.form['appurl']:
             error = 'You have to enter a url'
-        elif not request.form['appcolor']:
+        elif not appcolor:
             appcolor='#888'
         else:
             db = get_db()
@@ -138,8 +139,7 @@ def admin_add_app():
                appcolor))
             db.commit()
             return redirect(url_for('index'))
-
-    return redirect(url_for('index'), error=error)
+    return render_template('index.html', error=error)
 
 
 @app.route("/app/<appname>")
