@@ -110,9 +110,15 @@ def index():
         return render_template('login.html')
     return render_template("index.html", appList=query_db('select * from apps'))
 
+
 @app.route("/signup")
 def signup():
     return render_template("register.html")
+
+
+@app.route("/submitApp")
+def admin_add_app():
+    return render_template("/admin/app_add.html")
 
 
 @app.route("/app/<appname>")

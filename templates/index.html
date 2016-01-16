@@ -15,5 +15,8 @@
             </div>
         </a>
         {% endfor %}
+        {{ if g.user.username == "admin" }}
+        <p>user is admin</p>
+        {{ endif }}
     </div>
 {% endblock %}
