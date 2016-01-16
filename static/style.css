@@ -105,6 +105,7 @@ body {
     overflow: hidden;
     background-color: rgba(41, 128, 185, 0.4);
     display: inline-flex;
+    position: relative;
     margin: 12px 0 6px 12px;
     transition: .2s all ease .05s; }
     @media only screen and (max-width: 1024px) {
@@ -121,6 +122,12 @@ body {
         display: block;
         max-width: 400px;
         margin: 6px auto; } }
+    .card_holder .card .card_desc_image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0; }
     .card_holder .card.blue {
       background-color: #2980b9; }
       .card_holder .card.blue:hover {
@@ -158,9 +165,6 @@ body {
         .card_holder .card .card_desc {
           margin-top: 0;
           margin-left: 12px; } }
-      .card_holder .card .card_desc .card_desc_image {
-        width: 100%;
-        height: 100%; }
       .card_holder .card .card_desc .card_desc_short {
         font-size: 11px;
         line-height: 13px; }
