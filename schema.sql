@@ -8,8 +8,9 @@ create table user (
 
 drop table if exists apps;
 create table apps (
-  appId integer primary key autoincrement,
-  name text not null,
-  url text not null,
-  color text
+    appId integer primary key autoincrement,
+    name text not null,
+    description text not null,
+    url text not null,
+    color text
 );

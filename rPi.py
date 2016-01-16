@@ -116,7 +116,7 @@ def signup():
     return render_template("register.html")
 
 
-@app.route("/submitApp")
+@app.route("/admin_add_app")
 def admin_add_app():
     if g.user:
         return redirect(url_for('index'))
@@ -131,12 +131,12 @@ def admin_add_app():
             appcolor='#888'
         else:
             db = get_db()
-            db.execute('''insert into apps (name, url, color) values (?, ?, ?)''',
-              [request.form['appname'], request.form['appurl'], appcolor])
+            db.execute('''insert into apps (name, description, url, color) values (?, ?, ?, ?)''',
+              [request.form['appname'], [request.form['description'], request.form['appurl'], appcolor])
             db.commit()
             return redirect(url_for('index'))
 
-    return render_template("/admin/app_add.html")
+    return redirect(url_for('index'))
 
 
 @app.route("/app/<appname>")
