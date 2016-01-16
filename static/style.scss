@@ -124,6 +124,10 @@ body {
     a {
         text-decoration: none;
         overflow: hidden;
+
+        .button{
+            border:1px solid black;
+        }
     }
 
     .card{

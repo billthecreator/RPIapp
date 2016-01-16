@@ -95,6 +95,8 @@ body {
   .card_holder a {
     text-decoration: none;
     overflow: hidden; }
+    .card_holder a .button {
+      border: 1px solid black; }
   .card_holder .card {
     vertical-align: text-top;
     width: calc((100% / 4) - 24px);

@@ -11,12 +11,12 @@
                 <div class="card_desc">
                     <div class="card_desc_title">{{app.name}}</div>
                     <div class="card_desc_short">{{app.description}}</div>
-                    {% if g.user.username == "admin" %}
-                    <a href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
-                    {% endif %}
                 </div>
             </div>
         </a>
+        {% if g.user.username == "admin" %}
+        <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
+        {% endif %}
         {% endfor %}
         {% if g.user.username == "admin" %}
         <div class="form_box">
