@@ -16,7 +16,33 @@
         </a>
         {% endfor %}
         {% if g.user.username == "admin" %}
-        <p>user is admin</p>
+        <div class="form_box">
+            <div class="form_title">
+                Add App
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="App Name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Url" value="/app/">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Color">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Add">
+                    </td>
+                </tr>
+            </table>
+        </div>
         {% endif %}
     </div>
 {% endblock %}
