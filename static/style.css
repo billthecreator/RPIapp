@@ -94,9 +94,19 @@ body {
   margin: 0 auto; }
   .card_holder a {
     text-decoration: none;
-    overflow: hidden; }
-    .card_holder a .button {
-      border: 1px solid black; }
+    overflow: hidden;
+    width: 100%; }
+    .card_holder a.button {
+      border: 1px solid #222;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      padding: 4px;
+      font-size: 11px;
+      color: white;
+      background-color: #333;
+      width: auto;
+      opacity: 0; }
   .card_holder .card {
     vertical-align: text-top;
     width: calc((100% / 4) - 24px);
@@ -124,6 +134,8 @@ body {
         margin: 6px auto; } }
     .card_holder .card:hover .card_desc_image {
       opacity: 0.7; }
+    .card_holder .card:hover a.button {
+      opacity: 1; }
     .card_holder .card:active .card_desc_image {
       opacity: 0.8; }
     .card_holder .card .card_desc_image {

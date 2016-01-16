@@ -124,9 +124,19 @@ body {
     a {
         text-decoration: none;
         overflow: hidden;
+        width: 100%;
 
-        .button{
-            border:1px solid black;
+        &.button{
+          border: 1px solid #222;
+          position:absolute;
+          right: 12px;
+          top:12px;
+          padding: 4px;
+          font-size:11px;
+          color:white;
+          background-color:#333;
+          width:auto;
+          opacity:0;
         }
     }
 
@@ -163,7 +173,10 @@ body {
         $hover:0.7;
         $active:0.8;
 
-        &:hover{.card_desc_image {opacity: $hover;}}
+        &:hover{
+            .card_desc_image {opacity: $hover;}
+            a.button{opacity: 1;}
+        }
         &:active{.card_desc_image {opacity: $active;}}
 
         .card_desc_image {
