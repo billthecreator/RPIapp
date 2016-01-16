@@ -91,12 +91,12 @@ def get_user_id(username):
     return rv[0] if rv else None
 
 
-@app.before_request
-def before_request():
-    g.user = None
-    if 'user_id' in session:
-        g.user = query_db('select * from user where user_id = ?',
-                          [session['user_id']], one=True)
+#@app.before_request
+#def before_request():
+#    g.user = None
+#    if 'user_id' in session:
+#        g.user = query_db('select * from user where user_id = ?',
+#                          [session['user_id']], one=True)
 
 
 @app.errorhandler(404)
