@@ -11,6 +11,9 @@
                 <div class="card_desc">
                     <div class="card_desc_title">{{app.name}}</div>
                     <div class="card_desc_short">{{app.description}}</div>
+                    {% if g.user.username == "admin" %}
+                    <a href="{{ url_for('deleteApp', app.appId)}}">delete</a>
+                    {% endif %}
                 </div>
             </div>
         </a>

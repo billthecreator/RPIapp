@@ -115,6 +115,15 @@ def admin_add_app():
             return redirect(url_for('index'))
     return render_template('index.html', error=error)
 
+@app.route("/delete/<appid>")
+def deleteApp(appid):
+    if not g.user.username == 'admin':
+        return redirect(url_for('not_found'))
+
+    rv = query_db('select appId from apps where appId = ?',
+                  [appid], one=True)
+    if rv:
+        query_db('delete from apps where appID =? ', [appid])
 
 @app.route("/app/<appname>")
 def runApp(appname):
