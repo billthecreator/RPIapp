@@ -163,7 +163,7 @@ def admin_edit_app():
                request.form['description'],
                request.form['appurl'],
                appcolor,
-               request.form['appid']))
+               int(request.form['appid']))
             db.commit()
             return redirect(url_for('index'))
     return render_template('editApp.html', app=query_db('select * from apps where appId=?', [appid]), error=error)
