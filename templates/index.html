@@ -7,6 +7,7 @@
         {% for app in appList %}
             <div class="card">
                 {% if g.user.username == "admin" %}
+                <a class="button" href="{{ url_for('editApp', appid = app.appId) }}">edit</a>
                 <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
                 {% endif %}
                 <div class="card_desc_image" style="background-color:{{app.color}};"></div>
@@ -31,7 +32,7 @@
                     <tr><td><input type="text" placeholder="App Name" name="appname"></td></tr>
                     <tr><td><textarea placeholder="Description" name="description"></textarea></td></tr>
                     <tr><td><input type="text" placeholder="Url" value="/app/" name="appurl"></td></tr>
-                    <tr><td><input type="text" placeholder="Color" name="appcolor"></td></tr>
+                    <tr><td><input width=100px height=50px type="color" placeholder="Color" name="appcolor"></td></tr>
                     <tr><td><input type="submit" value="Add"></td></tr>
                 </table>
             </form>
