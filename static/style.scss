@@ -318,13 +318,13 @@ body {
 }
 
 .form_box{
-    width: calc(100% - 12px);
+    width: calc(100% - 14px);
     max-width: 500px;
     min-width: 50px;
     padding: 6px;
     border:1px solid #ccc;
     border-radius:2px;
-    margin: 3em auto;
+    margin: 4em 0;
     background-color: #ddd;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
 
@@ -356,6 +356,9 @@ body {
             }
 
         }
+        textarea {
+            height:100px;
+        }
         input[type="submit"] {
             box-sizing: border-box;
             padding: 8px;
@@ -371,6 +374,12 @@ body {
                 transition: all .2s ease;
             }
         }
+
+        p {
+            line-height: 30px;
+            font-size: 14px;
+        }
+
         input[type="color"] {
             width: 100px;
             height: 30px;
