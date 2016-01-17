@@ -12,7 +12,7 @@
     </div>
     {% for app in app %}
     <form method="post" action="{{ url_for('admin_edit_app') }}">
-        <input type="hidden" name="appId" value="{{ app.appId }}">
+        <input type="hidden" name="appid" value="{{ app.appId }}">
         <table>
             <tr><td><input type="text" placeholder="App Name" name="appname" value="{{ app.name }}"></td></tr>
             <tr><td><textarea placeholder="Description" name="description">{{ app.description }}</textarea></td></tr>
