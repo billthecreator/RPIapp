@@ -383,6 +383,7 @@ body {
         input[type="color"] {
             width: 100px;
             height: 30px;
+            line-height: 30px;
             padding:0;
             box-sizing: border-box;
             background-color: transparent;
@@ -408,6 +409,7 @@ body {
 
 .footer {
     font-size: 13px;
+    line-height: 45px;
     color: #888;
     text-align: center;
     margin-top: 25px; }
