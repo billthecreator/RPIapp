@@ -148,9 +148,12 @@ body {
       opacity: 1;
       transition: .2s opacity ease .05s;
       border-radius: 6px; }
+      @media only screen and (max-width: 490px) {
+        .card_holder .card .card_desc_image {
+          border-radius: 2px; } }
     .card_holder .card .card_desc {
       margin-top: 50%;
-      width: 100%;
+      width: calc(100% - 24px);
       padding: 12px;
       color: #212121;
       font-size: 15px;
@@ -162,8 +165,9 @@ body {
           margin-top: 0;
           margin-left: 12px; } }
       .card_holder .card .card_desc .card_desc_short {
-        font-size: 11px;
-        line-height: 13px; }
+        margin-top: 6px;
+        font-size: 13px;
+        line-height: 15px; }
 
 ::-moz-selection {
   background: rgba(39, 174, 96, 0.4);
@@ -250,8 +254,7 @@ body {
     box-sizing: border-box;
     resize: none;
     margin: 0;
-    padding: 8px 0;
-    text-indent: 8px;
+    padding: 8px;
     width: calc(100%);
     font-size: 15px;
     font-family: 'Roboto';
