@@ -223,11 +223,11 @@ body {
             margin-top: 50%;
             width:calc(100% - 24px);
             padding: 12px;
-            color: #212121;
+            color:white;
             font-size: 15px;
             font-weight: normal;
             line-height: 22px;
-            background-color: white;
+            background-color: rgba(black, .7);
 
             @media only screen and (max-width: 490px) {
                 margin-top: 0;
