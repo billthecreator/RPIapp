@@ -144,6 +144,9 @@ def admin_edit_app():
     if getUserId != session['user_id']:
         return render_template('404.html')
 
+    error = None
+    appcolor = request.form['appcolor']
+
     if request.method == 'POST':
         if not request.form['appname']:
             error = 'You have to enter a name for the app'
