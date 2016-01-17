@@ -7,7 +7,7 @@ from flask import Flask, request, session, url_for, redirect, \
 from werkzeug import check_password_hash, generate_password_hash
 
 
-DATABASE='/tmp/RPIapp.db'
+DATABASE=os.path.join(app.root_path,'RPIapp.db')
 DEBUG=True
 SECRET_KEY='yogurt'
 
