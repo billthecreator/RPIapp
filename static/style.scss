@@ -376,18 +376,26 @@ body {
         }
 
         p {
-            line-height: 30px;
-            font-size: 14px;
+            line-height: 40px;
+            font-size: 13px;
+            margin:0;
+            float:left;
         }
 
         input[type="color"] {
-            width: 100px;
-            height: 30px;
+            width: 60px;
+            height: 40px;
             line-height: 30px;
             padding:0;
+            margin-left: 4px
+            float:left;
             box-sizing: border-box;
             background-color: transparent;
             border: none;
+
+            &:focus{
+                border: none;
+            }
         }
 
         table{
