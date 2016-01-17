@@ -7,8 +7,10 @@
         {% for app in appList %}
             <div class="card">
                 {% if g.user.username == "admin" %}
-                <a class="button" href="{{ url_for('editApp', appid = app.appId) }}">edit</a>
-                <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
+                <div class="adminControl">
+                    <a class="button" href="{{ url_for('editApp', appid = app.appId) }}">edit</a>
+                    <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
+                </div>
                 {% endif %}
                 <div class="card_desc_image" style="background-color:{{app.color}};"></div>
                 <a href="{{app.url}}">

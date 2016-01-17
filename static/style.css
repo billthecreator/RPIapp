@@ -92,21 +92,30 @@ body {
   width: 100%;
   display: inline;
   margin: 0 auto; }
+  .card_holder .adminControl {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    padding: 4px;
+    font-size: 11px;
+    width: auto; }
+    .card_holder .adminControl a {
+      text-decoration: none;
+      overflow: hidden;
+      width: 100%; }
+      .card_holder .adminControl a.button {
+        border: 1px solid #222;
+        position: relative;
+        padding: 4px;
+        font-size: 11px;
+        color: white;
+        background-color: #333;
+        width: auto;
+        opacity: 0; }
   .card_holder a {
     text-decoration: none;
     overflow: hidden;
     width: 100%; }
-    .card_holder a.button {
-      border: 1px solid #222;
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      padding: 4px;
-      font-size: 11px;
-      color: white;
-      background-color: #333;
-      width: auto;
-      opacity: 0; }
   .card_holder .card {
     vertical-align: text-top;
     width: calc((100% / 4) - 24px);
