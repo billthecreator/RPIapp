@@ -158,7 +158,7 @@ def admin_edit_app():
             appcolor='#888'
         else:
             db = get_db()
-            db.execute("update apps set name='?', description='?', url='?', color='?' where appId='?'"
+            db.execute("update apps set name='?', description='?', url='?', color='?' where appId=?"
               (request.form['appname'],
                request.form['description'],
                request.form['appurl'],
