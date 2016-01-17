@@ -115,7 +115,7 @@ body {
         margin-left: 2px;
         font-size: .7em;
         border-radius: 6px;
-        color: white;
+        color: rgba(0, 0, 0, 0.87);
         background-color: rgba(255, 255, 255, 0.9);
         width: auto;
         opacity: 1; }
@@ -179,9 +179,9 @@ body {
           margin-top: 0;
           margin-left: 12px; } }
       .card_holder .card .card_desc .card_desc_short {
-        margin-top: 6px;
-        letter-spacing: .8px;
-        font-size: 13px;
+        margin-top: 8px;
+        letter-spacing: .1px;
+        font-size: 12px;
         line-height: 16px; }
 
 ::-moz-selection {

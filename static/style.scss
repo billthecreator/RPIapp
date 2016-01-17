@@ -148,7 +148,7 @@ body {
                 margin-left:2px;
                 font-size: .7em;
                 border-radius:6px;
-                color: white;
+                color: rgba(black, .87);
                 background-color: rgba(white,.9);
                 width: auto;
                 opacity: 1;
@@ -231,9 +231,9 @@ body {
                 margin-left: 12px;
             }
             .card_desc_short {
-                margin-top: 6px;
-                letter-spacing: .8px;
-                font-size: 13px;
+                margin-top: 8px;
+                letter-spacing: .1px;
+                font-size: 12px;
                 line-height:16px;
             }
         }
