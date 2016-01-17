@@ -163,7 +163,7 @@ def admin_edit_app(appid):
                appid))
             db.commit()
             return redirect(url_for('index'))
-    return redirect(url_for('editApp', appid=appid))
+    return render_template('editApp.html', app=query_db('select * from apps where appId=?', [appid]), error=error)
 
 
 @app.route("/app/<appname>")
