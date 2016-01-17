@@ -127,6 +127,18 @@ def deleteApp(appid):
     return redirect(url_for('index'))
 
 
+@app.route("/edit/<appid>")
+def editApp(appid):
+    getUserId = get_user_id('admin')
+    if getUserId != session['user_id']:
+        return render_template('404.html')
+#    else:
+#        db = get_db()
+#        db.execute('delete from apps where appID=? ', [appid])
+#        db.commit()
+    return redirect(url_for('index'))
+
+
 @app.route("/app/<appname>")
 def runApp(appname):
     return redirect(url_for('index'))
