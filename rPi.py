@@ -102,6 +102,8 @@ def admin_add_app():
             error = 'You have to enter a name for the app'
         elif not request.form['appurl']:
             error = 'You have to enter a url'
+        elif not request.form['description']:
+            error = 'You have to enter the description'
         elif not appcolor:
             appcolor='#888'
         else:
@@ -132,11 +134,36 @@ def editApp(appid):
     getUserId = get_user_id('admin')
     if getUserId != session['user_id']:
         return render_template('404.html')
-#    else:
-#        db = get_db()
-#        db.execute('delete from apps where appID=? ', [appid])
-#        db.commit()
-    return redirect(url_for('index'))
+
+    return render_template('editApp.html', app=query_db('select * from apps where appId=?', [appid]))
+
+
+@app.route("/admin_edit_app", methods=['GET', 'POST'])
+def admin_edit_app(appid):
+    getUserId = get_user_id('admin')
+    if getUserId != session['user_id']:
+        return render_template('404.html')
+
+    if request.method == 'POST':
+        if not request.form['appname']:
+            error = 'You have to enter a name for the app'
+        elif not request.form['appurl']:
+            error = 'You have to enter a url'
+        elif not request.form['description']:
+            error = 'You have to enter the description'
+        elif not appcolor:
+            appcolor='#888'
+        else:
+            db = get_db()
+            db.execute('''update apps set name=?, description=?, url=?, color=? where appId=?'''
+              (request.form['appname'],
+               request.form['description'],
+               request.form['appurl'],
+               appcolor,
+               appid))
+            db.commit()
+            return redirect(url_for('index'))
+    return redirect(url_for('editApp', appid=appid))
 
 
 @app.route("/app/<appname>")

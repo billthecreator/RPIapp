@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+{% if g.user.username == "admin" %}
+<div class="form_box">
+    <div class="form_title">
+        Edit App
+    </div>
+    <div class="error">
+        {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
+    </div>
+    <form method="post" action="{{ url_for('admin_edit_app') }}">
+        <table>
+            <tr><td><input type="text" placeholder="App Name" name="appname" value="{{ request.form.appname }}"></td></tr>
+            <tr><td><textarea placeholder="Description" name="description">{{ request.form.appdesc }}</textarea></td></tr>
+            <tr><td><input type="text" placeholder="Url" value="/app/" name="appurl"></td></tr>
+            <tr><td>Background-color:<input type="color" placeholder="Color" name="appcolor" value="#555555"></td></tr>
+            <tr><td><input type="submit" value="Add"></td></tr>
+        </table>
+    </form>
+</div>
+{% else %}
+<p>Um, you're not supposed to be here...</p>
+{% endif %}
+{% endblock %}
