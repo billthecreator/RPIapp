@@ -16,7 +16,7 @@ app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 DATABASE='/RPIapp.db'
-DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'RPIapp.db')
+DATABASE_URI = os.path.join(_basedir, 'RPIapp.db')
 DEBUG=True
 SECRET_KEY='yogurt'
 
