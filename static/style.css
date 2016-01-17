@@ -256,9 +256,9 @@ body {
 
 .form_box {
   width: calc(100% - 14px);
-  max-width: 500px;
+  max-width: 450px;
   min-width: 50px;
-  padding: 6px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 2px;
   margin: 4em 0;
@@ -266,7 +266,7 @@ body {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07); }
   .form_box .form_title {
     font-family: 'Bitter';
-    line-height: 42px;
+    line-height: 30px;
     font-weight: bold; }
   .form_box form input:not([type="submit"]), .form_box form textarea {
     box-sizing: border-box;
