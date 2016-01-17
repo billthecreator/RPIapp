@@ -9,12 +9,14 @@ from flask import Flask, request, session, url_for, redirect, \
 from werkzeug import check_password_hash, generate_password_hash
 
 
+_basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
-DATABASE=os.path.join(app.root_path,'RPIapp.db')
+DATABASE='/RPIapp.db'
+DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'RPIapp.db')
 DEBUG=True
 SECRET_KEY='yogurt'
 
@@ -25,7 +27,7 @@ def get_db():
     """
     top = _app_ctx_stack.top
     if not hasattr(top, 'sqlite_db'):
-        top.sqlite_db = sqlite3.connect(app.config[DATABASE])
+        top.sqlite_db = sqlite3.connect(app.config[DATABASE_URI])
         top.sqlite_db.row_factory = sqlite3.Row
     return top.sqlite_db
 
