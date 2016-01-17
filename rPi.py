@@ -155,11 +155,7 @@ def admin_edit_app():
             error = 'You have to enter the description'
         else:
             db = get_db()
-            db.execute("update apps set name='?', description='?', url='?', color='?' where appId=" + request.form['appid']
-              (request.form['appname'],
-               request.form['description'],
-               request.form['appurl'],
-               request.form['appcolor']))
+            db.execute("update apps set name='" + request.form['appname'] + "', description='" + request.form['description'] + "', url='" + request.form['appurl'] + "', color='" + request.form['appcolor'] + "' where appId=" + request.form['appid'])
             db.commit()
             return redirect(url_for('index'))
     return render_template('editApp.html', app=query_db('select * from apps where appId=?', [request.form['appid']]), error=error)
