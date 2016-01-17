@@ -284,6 +284,12 @@ body {
     .form_box form input[type="submit"]:hover {
       background-color: rgba(39, 174, 96, 0.9);
       transition: all .2s ease; }
+  .form_box form input[type="color"] {
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none; }
   .form_box form table {
     width: 100%;
     padding: 0;
