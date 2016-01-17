@@ -10,7 +10,9 @@
     <div class="error">
         {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
     </div>
+    {% for app in app %}
     <form method="post" action="{{ url_for('admin_edit_app') }}">
+        <input type="hidden" name="appId" value="{{ app.appId }}">
         <table>
             <tr><td><input type="text" placeholder="App Name" name="appname" value="{{ app.name }}"></td></tr>
             <tr><td><textarea placeholder="Description" name="description">{{ app.description }}</textarea></td></tr>
@@ -19,6 +21,7 @@
             <tr><td><input type="submit" value="Add"></td></tr>
         </table>
     </form>
+    {% endfor %}
 </div>
 {% else %}
 <p>Um, you're not supposed to be here...</p>
