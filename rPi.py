@@ -145,7 +145,6 @@ def admin_edit_app():
         return render_template('404.html')
 
     error = None
-    appcolor = request.form['appcolor']
 
     if request.method == 'POST':
         if not request.form['appname']:
@@ -154,15 +153,13 @@ def admin_edit_app():
             error = 'You have to enter a url'
         elif not request.form['description']:
             error = 'You have to enter the description'
-        elif not appcolor:
-            appcolor='#888'
         else:
             db = get_db()
             db.execute("update apps set name='?', description='?', url='?', color='?' where appId=" + request.form['appid']
               (request.form['appname'],
                request.form['description'],
                request.form['appurl'],
-               appcolor))
+               request.form['appcolor']))
             db.commit()
             return redirect(url_for('index'))
     return render_template('editApp.html', app=query_db('select * from apps where appId=?', [request.form['appid']]), error=error)
