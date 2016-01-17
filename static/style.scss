@@ -124,6 +124,8 @@ body {
     display: inline;
     margin:0 auto;
 
+    $card-border-radius: 2px;
+
     .adminControl{
         position: absolute;
         right: 0px;
@@ -139,7 +141,7 @@ body {
             width: 100%;
 
             &.button{
-                border: 1px solid rgba(#000,.3);
+                border: 1px solid rgba(#000,.1);
                 text-transform:uppercase;
                 position: relative;
                 padding: 8px;
@@ -147,12 +149,12 @@ body {
                 font-size: .7em;
                 border-radius:6px;
                 color: white;
-                background-color: #444;
+                background-color: rgba(white,.9);
                 width: auto;
                 opacity: 1;
 
                 &:hover{
-                    background-color: rgba(darkred, .4);
+                    background-color: rgba(white, 1);
                 }
             }
         }
@@ -170,7 +172,7 @@ body {
         min-width: 200px;
         max-width: 400px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
-        border-radius: 6px;
+        border-radius: $card-border-radius;
         overflow: hidden;
         display: inline-flex;
         position: relative;
@@ -186,7 +188,6 @@ body {
         @media only screen and (max-width: 490px) {
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
             width: calc(100% - 6px);
-            border-radius:2px;
             display: block;
             max-width: 400px;
             margin: 6px auto;
@@ -212,22 +213,18 @@ body {
             z-index: -1;
             opacity: $static;
             transition: .2s opacity ease .05s;
-            border-radius: 6px;
-
-            @media only screen and (max-width: 490px) {
-                border-radius: 2px;
-            }
+            border-radius: $card-border-radius;
         }
 
         .card_desc {
             margin-top: 50%;
             width:calc(100% - 24px);
             padding: 12px;
-            color:white;
+            color:rgba(black, .87);
             font-size: 15px;
             font-weight: normal;
             line-height: 22px;
-            background-color: rgba(black, .7);
+            background-color: white;
 
             @media only screen and (max-width: 490px) {
                 margin-top: 0;
@@ -235,8 +232,9 @@ body {
             }
             .card_desc_short {
                 margin-top: 6px;
+                letter-spacing: .8px;
                 font-size: 13px;
-                line-height:15px;
+                line-height:16px;
             }
         }
     }

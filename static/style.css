@@ -108,7 +108,7 @@ body {
       overflow: hidden;
       width: 100%; }
       .card_holder .adminControl a.button {
-        border: 1px solid rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.1);
         text-transform: uppercase;
         position: relative;
         padding: 8px;
@@ -116,11 +116,11 @@ body {
         font-size: .7em;
         border-radius: 6px;
         color: white;
-        background-color: #444;
+        background-color: rgba(255, 255, 255, 0.9);
         width: auto;
         opacity: 1; }
         .card_holder .adminControl a.button:hover {
-          background-color: rgba(139, 0, 0, 0.4); }
+          background-color: white; }
   .card_holder a {
     text-decoration: none;
     overflow: hidden;
@@ -131,7 +131,7 @@ body {
     min-width: 200px;
     max-width: 400px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
-    border-radius: 6px;
+    border-radius: 2px;
     overflow: hidden;
     display: inline-flex;
     position: relative;
@@ -146,7 +146,6 @@ body {
       .card_holder .card {
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
         width: calc(100% - 6px);
-        border-radius: 2px;
         display: block;
         max-width: 400px;
         margin: 6px auto; } }
@@ -165,27 +164,25 @@ body {
       z-index: -1;
       opacity: 1;
       transition: .2s opacity ease .05s;
-      border-radius: 6px; }
-      @media only screen and (max-width: 490px) {
-        .card_holder .card .card_desc_image {
-          border-radius: 2px; } }
+      border-radius: 2px; }
     .card_holder .card .card_desc {
       margin-top: 50%;
       width: calc(100% - 24px);
       padding: 12px;
-      color: white;
+      color: rgba(0, 0, 0, 0.87);
       font-size: 15px;
       font-weight: normal;
       line-height: 22px;
-      background-color: rgba(0, 0, 0, 0.7); }
+      background-color: white; }
       @media only screen and (max-width: 490px) {
         .card_holder .card .card_desc {
           margin-top: 0;
           margin-left: 12px; } }
       .card_holder .card .card_desc .card_desc_short {
         margin-top: 6px;
+        letter-spacing: .8px;
         font-size: 13px;
-        line-height: 15px; }
+        line-height: 16px; }
 
 ::-moz-selection {
   background: rgba(39, 174, 96, 0.4);
