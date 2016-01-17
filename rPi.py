@@ -139,7 +139,7 @@ def editApp(appid):
 
 
 @app.route("/admin_edit_app", methods=['GET', 'POST'])
-def admin_edit_app(appid):
+def admin_edit_app():
     getUserId = get_user_id('admin')
     if getUserId != session['user_id']:
         return render_template('404.html')
