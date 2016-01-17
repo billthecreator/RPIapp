@@ -158,12 +158,11 @@ def admin_edit_app():
             appcolor='#888'
         else:
             db = get_db()
-            db.execute("update apps set name='?', description='?', url='?', color='?' where appId=?"
+            db.execute("update apps set name='?', description='?', url='?', color='?' where appId=" + request.form['appid']
               (request.form['appname'],
                request.form['description'],
                request.form['appurl'],
-               appcolor,
-               request.form['appid']))
+               appcolor))
             db.commit()
             return redirect(url_for('index'))
     return render_template('editApp.html', app=query_db('select * from apps where appId=?', [request.form['appid']]), error=error)
