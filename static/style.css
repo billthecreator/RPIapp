@@ -287,6 +287,7 @@ body {
   .form_box form input[type="color"] {
     width: 100px;
     height: 30px;
+    padding: 0;
     box-sizing: border-box;
     background-color: transparent;
     border: none; }
