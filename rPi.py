@@ -9,14 +9,14 @@ from flask import Flask, request, session, url_for, redirect, \
 from werkzeug import check_password_hash, generate_password_hash
 
 
-DATABASE=os.path.join(app.root_path,'RPIapp.db')
-DEBUG=True
-SECRET_KEY='yogurt'
-
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
+
+DATABASE=os.path.join(app.root_path,'RPIapp.db')
+DEBUG=True
+SECRET_KEY='yogurt'
 
 
 def get_db():
