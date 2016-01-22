@@ -221,8 +221,6 @@ body {
         .card_desc {
             margin-top: 50%;
             width:calc(100% - 24px);
-            min-height: 70px;
-            max-height: 100px;
             padding: 12px;
             color:rgba(black, .87);
             font-size: 15px;
@@ -440,7 +438,6 @@ body {
     display: flex;
 }
 .flex-item{
-    display: inherit;
     margin:5px;
 }
 
