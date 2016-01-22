@@ -83,7 +83,7 @@ def not_found(error):
 def index():
     if not g.user:
         return render_template('login.html')
-    return render_template("index.html", appList=query_db('select * from apps'), random_color=randomColor())
+    return render_template("index.html", appList=query_db('select * from apps'), random_color=randomColor(), usernames=query_db('select usernames from user'))
 
 
 @app.route("/signup")

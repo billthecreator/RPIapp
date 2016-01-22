@@ -40,5 +40,12 @@
             </table>
         </form>
     </div>
+    <div class="list">
+        <ul>
+            {% for username in usernames %}
+            <li>{{ username }}</li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 {% endblock %}
