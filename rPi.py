@@ -1,3 +1,4 @@
+import random
 import time
 from sqlite3 import dbapi2 as sqlite3
 from hashlib import md5
@@ -220,6 +221,8 @@ def register():
             return redirect(url_for('login'))
     return render_template('register.html', error=error)
 
+def randomColor():
+    return "#%06x" % random.randint(0, 0xFFFFFF)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
