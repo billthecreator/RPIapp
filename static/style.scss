@@ -324,14 +324,14 @@ body {
 
 
 .detail_pane{
-    width: calc(100% - 14px);
+    width: calc(100% - 48px);
     max-width: 450px;
     min-width: 50px;
     padding: 12px;
     float: left;
     border:1px solid #ccc;
     border-radius:2px;
-    margin: 4em 12px;
+    margin: 1em 12px 0;
     background-color: #ddd;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
 
@@ -423,6 +423,8 @@ body {
     ul{
         list-style: none;
         overflow-y: auto;
+        margin: 4px;
+        padding-left: 12px;
         max-height: 100px;
 
         li{
@@ -459,8 +461,10 @@ body {
 }
 
 .footer {
+    width: 100%;
+    float: left;
     font-size: 13px;
-    line-height: 45px;
+    line-height: 150px;
     color: #888;
     text-align: center;
     margin-top: 25px; }
