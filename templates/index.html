@@ -2,43 +2,43 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block body %}
+    <h1>Raspberry Pi</h1>
     <div class="card_holder flex-container space-around">
-        <h1>Raspberry Pi</h1>
         {% for app in appList %}
-            <div class="card flex-item">
-                {% if g.user.username == "admin" %}
-                <div class="adminControl">
-                    <a class="button" href="{{ url_for('editApp', appid = app.appId) }}">edit</a>
-                    <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
+        <div class="card flex-item">
+            {% if g.user.username == "admin" %}
+            <div class="adminControl">
+                <a class="button" href="{{ url_for('editApp', appid = app.appId) }}">edit</a>
+                <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
+            </div>
+            {% endif %}
+            <div class="card_desc_image" style="background-color:{{app.color}};"></div>
+            <a href="{{app.url}}">
+                <div class="card_desc">
+                    <div class="card_desc_title">{{app.name}}</div>
+                    <div class="card_desc_short">{{app.description}}</div>
                 </div>
-                {% endif %}
-                <div class="card_desc_image" style="background-color:{{app.color}};"></div>
-                <a href="{{app.url}}">
-                    <div class="card_desc">
-                        <div class="card_desc_title">{{app.name}}</div>
-                        <div class="card_desc_short">{{app.description}}</div>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
-        {% if g.user.username == "admin" %}
-        <div class="form_box">
-            <div class="form_title">
-                Add App
-            </div>
-            <div class="error">
-                {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
-            </div>
-            <form method="post" action="{{ url_for('admin_add_app') }}">
-                <table>
-                    <tr><td><input type="text" placeholder="App Name" name="appname"></td></tr>
-                    <tr><td><textarea placeholder="Description" name="description"></textarea></td></tr>
-                    <tr><td><input type="text" placeholder="Url" value="/app/" name="appurl"></td></tr>
-                    <tr><td><p>Background-color:</p><input type="color" placeholder="Color" name="appcolor" value="#555555"></td></tr>
-                    <tr><td><input type="submit" value="Add"></td></tr>
-                </table>
-            </form>
+            </a>
         </div>
-        {% endif %}
+        {% endfor %}
     </div>
+    {% if g.user.username == "admin" %}
+    <div class="form_box">
+        <div class="form_title">
+            Add App
+        </div>
+        <div class="error">
+            {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
+        </div>
+        <form method="post" action="{{ url_for('admin_add_app') }}">
+            <table>
+                <tr><td><input type="text" placeholder="App Name" name="appname"></td></tr>
+                <tr><td><textarea placeholder="Description" name="description"></textarea></td></tr>
+                <tr><td><input type="text" placeholder="Url" value="/app/" name="appurl"></td></tr>
+                <tr><td><p>Background-color:</p><input type="color" placeholder="Color" name="appcolor" value="#555555"></td></tr>
+                <tr><td><input type="submit" value="Add"></td></tr>
+            </table>
+        </form>
+    </div>
+    {% endif %}
 {% endblock %}

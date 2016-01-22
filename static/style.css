@@ -324,14 +324,12 @@ body {
 
 .flex-container {
   margin: 10px auto;
-  background-color: #124678;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
 
 .flex-item {
   display: inherit;
-  background-color: #ccc;
   margin: 5px; }
 
 .flex-item p {
