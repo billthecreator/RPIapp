@@ -3,7 +3,7 @@
 
 {% block body %}
     <h1>Raspberry Pi</h1>
-    <div class="card_holder flex-container space-around">
+    <div class="card_holder flex-container flex-start">
         {% for app in appList %}
         <div class="card flex-item">
             {% if g.user.username == "admin" %}
