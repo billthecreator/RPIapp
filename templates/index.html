@@ -23,32 +23,34 @@
         {% endfor %}
     </div>
     {% if g.user.username == "admin" %}
-    <div class="detail_pane">
-        <div class="pane_title">
-            Add App
+    <div class="panel flex-container flex-start wrap">
+        <div class="detail_pane flex-item">
+            <div class="pane_title">
+                Add App
+            </div>
+            <div class="error">
+                {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
+            </div>
+            <form method="post" action="{{ url_for('admin_add_app') }}">
+                <table>
+                    <tr><td><input type="text" placeholder="App Name" name="appname"></td></tr>
+                    <tr><td><textarea placeholder="Description" name="description"></textarea></td></tr>
+                    <tr><td><input type="text" placeholder="Url" value="/app/" name="appurl"></td></tr>
+                    <tr><td><p>Background-color:</p><input type="color" placeholder="Color" name="appcolor" value="{{ random_color }}"></td></tr>
+                    <tr><td><input type="submit" value="Add"></td></tr>
+                </table>
+            </form>
         </div>
-        <div class="error">
-            {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
+        <div class="detail_pane flex-item">
+            <div class="pane_title">
+                Users
+            </div>
+            <ul>
+                {% for username in usernames %}
+                <li>{{ username.username }}</li>
+                {% endfor %}
+            </ul>
         </div>
-        <form method="post" action="{{ url_for('admin_add_app') }}">
-            <table>
-                <tr><td><input type="text" placeholder="App Name" name="appname"></td></tr>
-                <tr><td><textarea placeholder="Description" name="description"></textarea></td></tr>
-                <tr><td><input type="text" placeholder="Url" value="/app/" name="appurl"></td></tr>
-                <tr><td><p>Background-color:</p><input type="color" placeholder="Color" name="appcolor" value="{{ random_color }}"></td></tr>
-                <tr><td><input type="submit" value="Add"></td></tr>
-            </table>
-        </form>
-    </div>
-    <div class="detail_pane">
-        <div class="pane_title">
-            Users
-        </div>
-        <ul>
-            {% for username in usernames %}
-            <li>{{ username.username }}</li>
-            {% endfor %}
-        </ul>
     </div>
     {% endif %}
 {% endblock %}
