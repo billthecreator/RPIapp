@@ -322,19 +322,20 @@ body {
     }
 }
 
-.form_box{
+
+.detail_pane{
     width: calc(100% - 14px);
     max-width: 450px;
     min-width: 50px;
     padding: 12px;
+    float: left;
     border:1px solid #ccc;
     border-radius:2px;
     margin: 4em 12px;
     background-color: #ddd;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
 
-
-    .form_title{
+    .pane_title{
         font-family: 'Bitter';
         line-height: 30px;
         font-weight:bold;
@@ -416,6 +417,16 @@ body {
                 padding:4px 0;
             }
 
+        }
+    }
+
+    ul{
+        list-style: none;
+        overflow-y: auto;
+        max-height: 100px;
+
+        li{
+            font-size: 13px;
         }
     }
 }

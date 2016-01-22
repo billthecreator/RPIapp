@@ -23,8 +23,8 @@
         {% endfor %}
     </div>
     {% if g.user.username == "admin" %}
-    <div class="form_box">
-        <div class="form_title">
+    <div class="detail_pane">
+        <div class="pane_title">
             Add App
         </div>
         <div class="error">
@@ -40,7 +40,10 @@
             </table>
         </form>
     </div>
-    <div class="list">
+    <div class="detail_pane">
+        <div class="pane_title">
+            Users
+        </div>
         <ul>
             {% for username in usernames %}
             <li>{{ username.username }}</li>

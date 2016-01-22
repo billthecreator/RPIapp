@@ -257,21 +257,22 @@ body {
       background-color: rgba(39, 174, 96, 0.9);
       transition: all .2s ease; }
 
-.form_box {
+.detail_pane {
   width: calc(100% - 14px);
   max-width: 450px;
   min-width: 50px;
   padding: 12px;
+  float: left;
   border: 1px solid #ccc;
   border-radius: 2px;
   margin: 4em 12px;
   background-color: #ddd;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07); }
-  .form_box .form_title {
+  .detail_pane .pane_title {
     font-family: 'Bitter';
     line-height: 30px;
     font-weight: bold; }
-  .form_box form input:not([type="submit"]), .form_box form textarea {
+  .detail_pane form input:not([type="submit"]), .detail_pane form textarea {
     box-sizing: border-box;
     resize: none;
     margin: 0;
@@ -282,11 +283,11 @@ body {
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 2px; }
-    .form_box form input:not([type="submit"]):focus, .form_box form textarea:focus {
+    .detail_pane form input:not([type="submit"]):focus, .detail_pane form textarea:focus {
       border: 1px solid #27ae60; }
-  .form_box form textarea {
+  .detail_pane form textarea {
     height: 100px; }
-  .form_box form input[type="submit"] {
+  .detail_pane form input[type="submit"] {
     box-sizing: border-box;
     padding: 8px;
     font-size: 15px;
@@ -295,15 +296,15 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 2px;
     transition: all .2s ease; }
-    .form_box form input[type="submit"]:hover {
+    .detail_pane form input[type="submit"]:hover {
       background-color: rgba(39, 174, 96, 0.9);
       transition: all .2s ease; }
-  .form_box form p {
+  .detail_pane form p {
     line-height: 40px;
     font-size: 13px;
     margin: 0;
     float: left; }
-  .form_box form input[type="color"] {
+  .detail_pane form input[type="color"] {
     width: 60px;
     height: 40px;
     line-height: 30px;
@@ -313,18 +314,24 @@ body {
     box-sizing: border-box;
     background-color: transparent;
     border: none; }
-    .form_box form input[type="color"]:focus {
+    .detail_pane form input[type="color"]:focus {
       border: none; }
-  .form_box form table {
+  .detail_pane form table {
     width: 100%;
     padding: 0;
     margin: 0;
     border-spacing: 0px;
     border-collapse: separate; }
-    .form_box form table tr, .form_box form table td {
+    .detail_pane form table tr, .detail_pane form table td {
       max-width: 100%;
       margin: 0;
       padding: 4px 0; }
+  .detail_pane ul {
+    list-style: none;
+    overflow-y: auto;
+    max-height: 100px; }
+    .detail_pane ul li {
+      font-size: 13px; }
 
 .flex-container {
   margin: 10px auto;
