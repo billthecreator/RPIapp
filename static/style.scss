@@ -438,6 +438,16 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-around;
 }
+.flex-container.flex-start{
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+.flex-container.wrap{
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+}
 
 .footer {
     font-size: 13px;
