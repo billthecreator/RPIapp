@@ -25,8 +25,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
-while True:
-    GPIO.output(23, GPIO.HIGH)
+GPIO.output(23, GPIO.HIGH)
 
 
 def get_db():
