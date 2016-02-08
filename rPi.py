@@ -78,10 +78,12 @@ def get_user_id(username):
 
 @app.before_request
 def before_request():
+    GPIO.output(23, GPIO.LOW)
     g.user = None
     if 'user_id' in session:
         g.user = query_db('select * from user where user_id = ?',
                           [session['user_id']], one=True)
+    GPIO.output(23, GPIO.HIGH)
 
 
 @app.errorhandler(404)
