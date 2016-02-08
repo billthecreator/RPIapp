@@ -14,7 +14,7 @@ GPIO.setwarnings(False)
 greenLight = 17
 yellowLight = 27
 redLight = 22
-blueLight = 22
+blueLight = 23
 
 GPIO.setup(greenLight, GPIO.OUT)
 GPIO.setup(yellowLight, GPIO.OUT)
@@ -95,11 +95,14 @@ def before_request():
 
 
 def getUserCount():
-        userNum = query_db('select Count(*) from user')
-        if userNum < 10:
-            GPIO.output(greenLight, GPIO.HIGH)
-        elif userNum < 20:
-            GPIO.output(yellowLight, GPIO.HIGH)
+    GPIO.output(greenLight, GPIO.LOW)
+    GPIO.output(yellowLight, GPIO.LOW)
+    GPIO.output(redLight, GPIO.LOW)
+    userNum = query_db('select Count(*) from user')
+    if userNum < 1:
+        GPIO.output(greenLight, GPIO.HIGH)
+    elif userNum < 10:
+        GPIO.output(yellowLight, GPIO.HIGH)
 
 @app.errorhandler(404)
 def not_found(error):
