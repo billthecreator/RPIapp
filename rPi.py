@@ -83,6 +83,7 @@ def before_request():
     if 'user_id' in session:
         g.user = query_db('select * from user where user_id = ?',
                           [session['user_id']], one=True)
+    time.sleep(0.2)
     GPIO.output(23, GPIO.HIGH)
 
 
