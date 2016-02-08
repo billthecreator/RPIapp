@@ -10,10 +10,16 @@ from werkzeug import check_password_hash, generate_password_hash
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-GPIO.setup(17, GPIO.OUT)
-GPIO.setup(27, GPIO.OUT)
-GPIO.setup(22, GPIO.OUT)
-GPIO.setup(23, GPIO.OUT)
+
+greenLight = 17
+yellowLight = 27
+redLight = 22
+blueLight = 22
+
+GPIO.setup(greenLight, GPIO.OUT)
+GPIO.setup(yellowLight, GPIO.OUT)
+GPIO.setup(redLight, GPIO.OUT)
+GPIO.setup(blueLight, GPIO.OUT)
 
 
 DATABASE='/rpiapp/RPIapp.db'
@@ -25,7 +31,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
-GPIO.output(23, GPIO.HIGH)
+GPIO.output(blueLight, GPIO.HIGH)
 
 
 def get_db():
@@ -78,14 +84,22 @@ def get_user_id(username):
 
 @app.before_request
 def before_request():
-    GPIO.output(23, GPIO.LOW)
+    GPIO.output(blueLight, GPIO.LOW)
     g.user = None
     if 'user_id' in session:
         g.user = query_db('select * from user where user_id = ?',
                           [session['user_id']], one=True)
+    getUserCount()
     time.sleep(0.2)
-    GPIO.output(23, GPIO.HIGH)
+    GPIO.output(blueLight, GPIO.HIGH)
 
+
+def getUserCount():
+        userNum = query_db('select Count(*) from user')
+        if userNum < 10
+            GPIO.output(greenLight, GPIO.HIGH)
+        elif userNum < 20
+            GPIO.output(yellowLight, GPIO.HIGH)
 
 @app.errorhandler(404)
 def not_found(error):
