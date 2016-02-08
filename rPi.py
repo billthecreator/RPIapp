@@ -99,10 +99,13 @@ def getUserCount():
     GPIO.output(yellowLight, GPIO.LOW)
     GPIO.output(redLight, GPIO.LOW)
     userNum = query_db('select Count(*) from user')
-    if userNum < 1:
+    if userNum <= 1:
         GPIO.output(greenLight, GPIO.HIGH)
-    elif userNum < 10:
+    elif userNum <= 10:
         GPIO.output(yellowLight, GPIO.HIGH)
+    else:
+        GPIO.output(redLight, GPIO.HIGH)
+
 
 @app.errorhandler(404)
 def not_found(error):
