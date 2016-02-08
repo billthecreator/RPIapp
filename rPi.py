@@ -1,4 +1,5 @@
 import random
+import RPi.GPIO as
 import time
 from sqlite3 import dbapi2 as sqlite3
 from hashlib import md5
@@ -6,6 +7,13 @@ from datetime import datetime
 from flask import Flask, request, session, url_for, redirect, \
      render_template, abort, g, flash, _app_ctx_stack
 from werkzeug import check_password_hash, generate_password_hash
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(17, GPIO.OUT)
+GPIO.setup(27, GPIO.OUT)
+GPIO.setup(22, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
 
 
 DATABASE='/rpiapp/RPIapp.db'
@@ -16,6 +24,9 @@ SECRET_KEY='yogurt'
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
+
+while True:
+    GPIO.output(23, GPIO.HIGH)
 
 
 def get_db():
