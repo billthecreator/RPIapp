@@ -99,9 +99,9 @@ def getUserCount():
     GPIO.output(yellowLight, GPIO.LOW)
     GPIO.output(redLight, GPIO.LOW)
     userNum = query_db('select Count(*) from user')
-    if userNum <= 1:
+    if userNum <= 5:
         GPIO.output(greenLight, GPIO.HIGH)
-    elif userNum <= 10:
+    if userNum < 11:
         GPIO.output(yellowLight, GPIO.HIGH)
     else:
         GPIO.output(redLight, GPIO.HIGH)
