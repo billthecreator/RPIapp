@@ -96,9 +96,9 @@ def before_request():
 
 def getUserCount():
         userNum = query_db('select Count(*) from user')
-        if userNum < 10
+        if userNum < 10:
             GPIO.output(greenLight, GPIO.HIGH)
-        elif userNum < 20
+        elif userNum < 20:
             GPIO.output(yellowLight, GPIO.HIGH)
 
 @app.errorhandler(404)
