@@ -33,7 +33,7 @@ app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 
 def blink():
-    delay = 0.05
+    delay = 2
     GPIO.output(blueLight, GPIO.LOW)
     time.sleep(delay)
     GPIO.output(blueLight, GPIO.HIGH)
