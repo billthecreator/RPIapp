@@ -32,13 +32,14 @@ app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 
 
-def blink(delay):
+def blink():
+    delay = 0.2
     GPIO.output(blueLight, GPIO.LOW)
     time.sleep(delay)
     GPIO.output(blueLight, GPIO.HIGH)
     threading.Timer(delay, blink).start();
 
-blink(delay=0.2)
+blink()
 
 
 def get_db():
