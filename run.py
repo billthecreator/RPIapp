@@ -98,16 +98,6 @@ def getUserCount():
     GPIO.output(greenLight, GPIO.LOW)
     GPIO.output(yellowLight, GPIO.LOW)
     GPIO.output(redLight, GPIO.LOW)
-
-    GPIO.output(greenLight, GPIO.HIGH)
-    time.sleep(.3)
-    GPIO.output(yellowLight, GPIO.HIGH)
-    time.sleep(.3)
-    GPIO.output(redLight, GPIO.HIGH)
-    time.sleep(.3)
-    GPIO.output(greenLight, GPIO.LOW)
-    GPIO.output(yellowLight, GPIO.LOW)
-    GPIO.output(redLight, GPIO.LOW)
     userNum = query_db('select Count(*) from user')
     if userNum[0][0] <= 5:
         GPIO.output(greenLight, GPIO.HIGH)
