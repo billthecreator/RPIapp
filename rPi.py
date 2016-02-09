@@ -227,6 +227,7 @@ def logout():
     return redirect(url_for('index'))
 
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     """Registers the user."""
