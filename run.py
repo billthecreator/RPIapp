@@ -38,7 +38,7 @@ def blink(delay):
     GPIO.output(blueLight, GPIO.HIGH)
     threading.Timer(delay, blink).start();
 
-blink(0.2)
+blink(delay=0.2)
 
 
 def get_db():
