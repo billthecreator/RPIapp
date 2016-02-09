@@ -33,9 +33,9 @@ app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 while True:
 
-        GPIO.output(blueLight, GPIO.LOW)
-        time.sleep(0.5)
-        GPIO.output(blueLight, GPIO.HIGH)
+    GPIO.output(blueLight, GPIO.LOW)
+    time.sleep(0.5)
+    GPIO.output(blueLight, GPIO.HIGH)
 
     def get_db():
         """Opens a new database connection if there is none yet for the
