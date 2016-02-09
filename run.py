@@ -26,12 +26,12 @@ DATABASE='/rpiapp/RPIapp.db'
 DEBUG=True
 SECRET_KEY='yogurt'
 
-blink()
-
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
+
+blink()
 
 def blink():
     GPIO.output(blueLight, GPIO.LOW)
