@@ -31,13 +31,15 @@ app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 
-blink()
 
 def blink():
     GPIO.output(blueLight, GPIO.LOW)
     time.sleep(0.5)
     GPIO.output(blueLight, GPIO.HIGH)
     threading.Timer(0.5, blink).start();
+
+blink()
+
 
 def get_db():
     """Opens a new database connection if there is none yet for the
