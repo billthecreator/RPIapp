@@ -26,12 +26,12 @@ DATABASE='/rpiapp/RPIapp.db'
 DEBUG=True
 SECRET_KEY='yogurt'
 
+blink()
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
-blink()
 
 def get_db():
     """Opens a new database connection if there is none yet for the
