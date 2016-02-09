@@ -32,7 +32,6 @@ app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 while True:
-
     GPIO.output(blueLight, GPIO.LOW)
     time.sleep(0.5)
     GPIO.output(blueLight, GPIO.HIGH)
