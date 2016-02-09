@@ -31,9 +31,12 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
-GPIO.output(blueLight, GPIO.HIGH)
-
 while True:
+
+        GPIO.output(blueLight, GPIO.LOW)
+        time.sleep(0.5)
+        GPIO.output(blueLight, GPIO.HIGH)
+
     def get_db():
         """Opens a new database connection if there is none yet for the
         current application context.
@@ -84,14 +87,11 @@ while True:
 
     @app.before_request
     def before_request():
-        GPIO.output(blueLight, GPIO.LOW)
         g.user = None
         if 'user_id' in session:
             g.user = query_db('select * from user where user_id = ?',
                               [session['user_id']], one=True)
         getUserCount()
-        time.sleep(0.2)
-        GPIO.output(blueLight, GPIO.HIGH)
 
 
     def getUserCount():
