@@ -1,6 +1,6 @@
 import random
 import RPi.GPIO as GPIO
-import time
+import time, threading
 from sqlite3 import dbapi2 as sqlite3
 from hashlib import md5
 from datetime import datetime
@@ -31,6 +31,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
+blink()
 
 def get_db():
     """Opens a new database connection if there is none yet for the
@@ -256,7 +257,8 @@ def randomColor():
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
 
-while True:
+def blink():
     GPIO.output(blueLight, GPIO.LOW)
     time.sleep(0.5)
     GPIO.output(blueLight, GPIO.HIGH)
+    threading.Timer(0.5, blink).start();
