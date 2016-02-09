@@ -33,6 +33,12 @@ app.config.from_object(__name__)
 app.config.from_envvar('RPI_APP_SETTINGS', silent=True)
 
 
+def blink():
+    GPIO.output(blueLight, GPIO.LOW)
+    time.sleep(0.5)
+    GPIO.output(blueLight, GPIO.HIGH)
+    threading.Timer(0.5, blink).start();
+
 def get_db():
     """Opens a new database connection if there is none yet for the
     current application context.
@@ -256,9 +262,3 @@ def randomColor():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
-
-def blink():
-    GPIO.output(blueLight, GPIO.LOW)
-    time.sleep(0.5)
-    GPIO.output(blueLight, GPIO.HIGH)
-    threading.Timer(0.5, blink).start();
