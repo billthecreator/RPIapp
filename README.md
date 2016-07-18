@@ -20,3 +20,6 @@ This is the same page, but logged in as a user. They can't do anything but click
 * Settings page for all users
 
 
+
+### This is how I access my Pi
+!["remotePi"](/remotePi.png)
