@@ -12,3 +12,11 @@ The admin will have more control, edit links, colors, description, title, path, 
 !["User Dashboard"](/QtpI1Fp.png)
 
 This is the same page, but logged in as a user. They can't do anything but click on the links.
+
+## Todo List
+* Email confirmation when registering account
+* Profile Page
+* Password forget system
+* Settings page for all users
+
+
