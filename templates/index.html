@@ -47,7 +47,11 @@
             </div>
             <ul>
                 {% for username in usernames %}
-                <li>{{ username.username }} {%if username.username != "admin" %}<a href="">Delete</a>{% endif %}</li>
+                <li>{{ username.username }}
+                    {%if username.username != "admin" %}
+                        <a href="">Edit</a>
+                        <a href="">Delete</a>
+                    {% endif %}</li>
                 {% endfor %}
             </ul>
         </div>
