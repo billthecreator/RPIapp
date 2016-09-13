@@ -51,7 +51,7 @@
                     <td>{{ username.username }}</td>
                 {%if username.username != "admin" %}
                     <td><a class="button" href="">edit</a></td>
-                    <td><a class="button" href="">delete</a></td> <!--{{ url_for('deleteUser', appid = app.appId) }} -->
+                    <td><a class="button" href="">delete</a></td>
                 {% endif %}
                 </tr>
             {% endfor %}
