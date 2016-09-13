@@ -45,15 +45,17 @@
             <div class="pane_title">
                 Users
             </div>
-            <ul>
-                {% for username in usernames %}
-                <li>{{ username.username }}
-                    {%if username.username != "admin" %}
-                        <a href="">Edit</a>
-                        <a href="">Delete</a>
-                    {% endif %}</li>
-                {% endfor %}
-            </ul>
+            <table>
+            {% for username in usernames %}
+                <tr>
+                    <td>{{ username.username }}</td>
+                {%if username.username != "admin" %}
+                    <td><a class="button" href="{{ url_for('editUser', appid = app.appId) }}">edit</a></td>
+                    <td><a class="button" href="{{ url_for('deleteUser', appid = app.appId) }}">delete</a></td>
+                {% endif %}
+                </tr>
+            {% endfor %}
+            </table>
         </div>
     </div>
     {% endif %}
