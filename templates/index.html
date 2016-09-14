@@ -45,13 +45,13 @@
             <div class="pane_title">
                 Users
             </div>
-            <table>
+            <table class="user_table">
             {% for username in usernames %}
                 <tr>
                     <td>{{ username.username }}</td>
                 {%if username.username != "admin" %}
-                    <td><a class="button" href="">edit</a></td>
-                    <td><a class="button" href="">delete</a></td>
+                    <td class="user_table_button"><a class="button" href="">edit</a></td>
+                    <td class="user_table_button"><a class="button" href="">delete</a></td>
                 {% endif %}
                 </tr>
             {% endfor %}

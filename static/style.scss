@@ -310,6 +310,15 @@ body {
     }
 }
 
+.user_table{
+    width: 100%;
+
+    tr:nth-of-type(2){background-color:rgba(black, .1);}
+    .user_table_button{
+        width: 20%;
+        text-align: right;
+    }
+}
 
 .detail_pane{
     width: calc(100% - 48px);
