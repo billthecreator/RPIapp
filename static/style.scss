@@ -315,8 +315,17 @@ body {
 
     tr:nth-of-type(2){background-color:rgba(black, .1);}
     td:first-of-type{width:100%;}
+    td{
+        padding: 4px 8px;
+    }
     .user_table_button{
         text-align: right;
+
+        .button{
+            text-decoration: none;
+            color: rgba(black, .87);
+            text-transform: uppercase;
+        }
     }
 }
 
