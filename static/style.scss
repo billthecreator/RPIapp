@@ -312,6 +312,7 @@ body {
 
 .user_table{
     width: 100%;
+    font-size: 15px;
 
     tr:nth-of-type(2){background-color:rgba(black, .05);}
     td:first-of-type{width:100%;}
@@ -320,7 +321,7 @@ body {
     }
     .user_table_button{
         text-align: right;
-        background-color: rgba(black, .05);
+        background-color: rgba($MAIN_COLOR, .05);
 
         .button{
             text-decoration: none;
@@ -333,7 +334,7 @@ body {
 
 .detail_pane{
     width: calc(100% - 48px);
-    max-width: 450px;
+    max-width: 650px;
     min-width: 50px;
     padding: 12px;
     float: left;
