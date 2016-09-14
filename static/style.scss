@@ -314,8 +314,8 @@ body {
     width: 100%;
 
     tr:nth-of-type(2){background-color:rgba(black, .1);}
+    td:first-of-type{width:100%;}
     .user_table_button{
-        width: 20%;
         text-align: right;
     }
 }
