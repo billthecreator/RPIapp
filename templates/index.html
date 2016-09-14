@@ -49,7 +49,6 @@
             {% for username in usernames %}
                 <tr>
                     <td>{{ username.username }}</td>
-                    <td>{{ username.email }}</td>
                 {%if username.username != "admin" %}
                     <td class="user_table_button"><a class="button" href="">edit</a></td>
                     <td class="user_table_button"><a class="button" href="">delete</a></td>
