@@ -7,7 +7,8 @@
         <div class="card flex-item">
             {% if g.user.username == "admin" %}
             <div class="adminControl">
-                <div class="dropdown">
+                <div class="dropdown" style="color:white;">
+                    Settings
                     <i class="fa fa-ellipsis-v"></i>
                     <div class="dropdown-content">
                         <a href="{{ url_for('editApp', appid = app.appId) }}">Edit</a>
