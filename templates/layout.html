@@ -18,9 +18,9 @@
                     {{ g.user.username.upper() }}
                     <i class="fa fa-caret-down"></i>
                     <div class="dropdown-content">
-                        <a href="">settings</a>
+                        <a href="">My account</a>
                     {% if g.user  %}
-                        <a href="{{ url_for('logout') }}">logout</a>
+                        <a href="{{ url_for('logout') }}">Sign out</a>
                     {% endif %}
                     </div>
                 </li>
