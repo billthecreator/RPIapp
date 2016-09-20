@@ -78,11 +78,11 @@ body {
                     transition: .2s all ease .05s;
 
                     &:hover {
-                        color: rgba(white, .5) !important;
+                        color: rgba(white, .5);
                     }
                     &:visited, &:focused, &:active {
-                        color: white !important;
-                        text-decoration: none !important;
+                        color: white;
+                        text-decoration: none;
                     }
                 }
             }
