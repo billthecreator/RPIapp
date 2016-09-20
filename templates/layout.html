@@ -2,9 +2,8 @@
 <title>{% block title %}Welcome{% endblock %} | Raspberry Pi</title>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-<meta name="theme-color" content="#2980B9" />
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <div class="container">
@@ -17,6 +16,7 @@
           <ul class="ul_right">
                 <li class="dropdown">
                     {{ g.user.username.upper() }}
+                    <i class="fa fa-caret-down">
                     <div class="dropdown-content">
                         <a href="">settings</a>
                     {% if g.user  %}
