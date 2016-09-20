@@ -65,7 +65,7 @@ body {
             li{margin-left: 0;}
           }
 
-            li:not(dropdown){
+            li:not(.dropdown){
                 float:left;
                 position:relative;
                 padding:6px 0;
