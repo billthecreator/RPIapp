@@ -12,13 +12,18 @@
     <div class="header">
         <div class="nav">
           <ul class="ul_left">
-            <li>{{ g.user.username.upper() }}</li>
+            <li><a href="{{ url_for('index') }}">Raspberry Pi</a></li>
           </ul>
-            <ul class="ul_right">
-                <li><a href="{{ url_for('index') }}">dashboard</a></li>
-                {% if g.user  %}
-                <li><a href="{{ url_for('logout') }}">log out</a></li>
-                {% endif %}
+          <ul class="ul_right">
+                <li class="dropdown">
+                    {{ g.user.username.upper() }}
+                    <div class="dropdown-content">
+                        <a href="">settings</a>
+                    {% if g.user  %}
+                        <a href="{{ url_for('logout') }}">logout</a>
+                    {% endif %}
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
