@@ -65,14 +65,14 @@ body {
             li{margin-left: 0;}
           }
 
-            li:not(.dropdown){
+            li{
                 float:left;
                 position:relative;
                 padding:6px 0;
                 font-weight:600;
                 color: white;
 
-                a{
+                a:not(.dropdown){
                     color:white !important;
                     text-decoration: none !important;
                     transition: .2s all ease .05s;
