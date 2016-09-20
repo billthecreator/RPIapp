@@ -7,8 +7,8 @@
         <div class="card flex-item">
             {% if g.user.username == "admin" %}
             <div class="adminControl">
-                <div class="dropdown" style="color:white; font-size:.8em;">
-                    Settings
+                <div class="dropdown" style="color:white; text-shadow(1px, 1px, 2px, #444);">
+                    Options
                     <div class="dropdown-content">
                         <a href="{{ url_for('editApp', appid = app.appId) }}">Edit</a>
                         <a href="{{ url_for('deleteApp', appid = app.appId) }}">Delete</a>
