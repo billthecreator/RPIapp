@@ -7,8 +7,13 @@
         <div class="card flex-item">
             {% if g.user.username == "admin" %}
             <div class="adminControl">
-                <a class="button" href="{{ url_for('editApp', appid = app.appId) }}">edit</a>
-                <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
+                <div class="dropdown">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <div class="dropdown-content">
+                        <a class="button" href="{{ url_for('editApp', appid = app.appId) }}">edit</a>
+                        <a class="button" href="{{ url_for('deleteApp', appid = app.appId) }}">delete</a>
+                    </div>
+                </div>
             </div>
             {% endif %}
             <div class="card_desc_image" style="background-color:{{app.color}};"></div>
