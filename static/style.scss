@@ -484,6 +484,7 @@ body {
 .dropdown-content {
     display: none;
     font-family: "Roboto";
+    overflow: hidden;
     position: absolute;
     right: 0;
     background-color: #f9f9f9;
