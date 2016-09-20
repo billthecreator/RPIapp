@@ -353,17 +353,17 @@ body {
     width: calc(100% - 48px);
     max-width: 650px;
     min-width: 50px;
-    padding: 12px;
+    padding: 6px 12px;
     float: left;
     border:1px solid #ccc;
     border-radius:2px;
     margin: 1em 12px 0;
-    background-color: #ddd;
+    background-color: #fff;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07);
 
     .pane_title{
         font-family: 'Bitter';
-        line-height: 30px;
+        padding: 6px 0;
         font-weight:bold;
     }
     .error{
@@ -400,6 +400,7 @@ body {
             border: 1px solid rgba(black, .15);
             border-radius: 2px;
             transition: all .2s ease;
+            margin-bottom: 6px;
 
             &:hover {
                 background-color: rgba($GREEN_COLOR, .9);
