@@ -12,7 +12,21 @@ textarea:focus,
 button:focus {
     outline: none;
 }
-
+@mixin gradient($from, $to, $deg:45deg) {
+    background: -moz-linear-gradient($deg, $from, $to);
+    background: -webkit-linear-gradient($deg, $from, $to);
+    background: linear-gradient($deg, $from, $to);
+}
+@mixin blur($val){
+    margin: -($val*2) auto;
+    filter: blur($val);
+    -webkit-filter: blur($val);
+    -moz-filter: blur($val);
+    -o-filter: blur($val);
+    -ms-filter: blur($val);
+    z-index: -1;
+    overflow: hidden;
+}
 body {
     padding: 0;
     margin: 0;
@@ -33,6 +47,7 @@ body {
     display: inline-block;
     width:calc(100% - 48px);
     background-color: $MAIN_COLOR;
+    @include gradient(#FF9E5A, #CF454F);
     font-family: "Bitter";
 
     @media only screen and (max-width: 490px) {
