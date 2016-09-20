@@ -72,9 +72,9 @@ body {
                 font-weight:600;
                 color: white;
 
-                a:not(.dropdown){
-                    color:white !important;
-                    text-decoration: none !important;
+                &:not(.dropdown) a{
+                    color:white;
+                    text-decoration: none;
                     transition: .2s all ease .05s;
 
                     &:hover {
