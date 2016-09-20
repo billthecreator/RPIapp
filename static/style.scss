@@ -476,6 +476,7 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -483,8 +484,9 @@ body {
     display: none;
     position: absolute;
     right: 0;
+    top: 3px;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     font-size: .8em;
     font-weight: 400;
