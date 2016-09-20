@@ -227,6 +227,7 @@ body {
             opacity: $static;
             transition: .2s opacity ease .05s;
             border-radius: $card-border-radius;
+            @include gradient(rgba(white, .2), rgba(black, .2));
         }
 
         .card_desc {
