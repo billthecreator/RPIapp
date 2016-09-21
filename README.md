@@ -21,7 +21,7 @@ The admin will have more control, edit links, colors, description, title, path, 
 #### Dropdown Code
 ```html
 <li class="dropdown">
-    {{ g.user.username.upper() }} <!-- username --->
+    {{ g.user.username.upper() }} <!-- username -->
     <i class="fa fa-caret-down"></i>
 
     <div class="dropdown-content">
