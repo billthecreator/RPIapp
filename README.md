@@ -15,6 +15,20 @@ The admin will have more control, edit links, colors, description, title, path, 
 
 #### Admin App Options Dropdown
 !["App Options"](/screens/options.png)
+#### Account Options Dropdown
+!["Account Options"](/screens/user_options.png)
+
+'''html
+<li class="dropdown">
+    {{ g.user.username.upper() }}
+    <i class="fa fa-caret-down"></i>
+    <div class="dropdown-content">
+        <a href="">My account</a>
+    {% if g.user  %}
+        <a href="{{ url_for('logout') }}">Sign out</a>
+    {% endif %}
+</div>
+'''
 
 ## Screen of User Dashboard
 !["User Dashboard"](/screens/user.png)
