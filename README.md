@@ -18,16 +18,17 @@ The admin will have more control, edit links, colors, description, title, path, 
 #### Account Options Dropdown
 !["Account Options"](/screens/user_options.png)
 
+#### Dropdown Code
 ```html
 <li class="dropdown">
-    {{ g.user.username.upper() }}
+    {{ g.user.username.upper() }} <!-- username --->
     <i class="fa fa-caret-down"></i>
+
     <div class="dropdown-content">
-        <a href="">My account</a>
-    {% if g.user  %}
+        <a href="{{ url_for('myAccount') }}">My account</a>
         <a href="{{ url_for('logout') }}">Sign out</a>
-    {% endif %}
     </div>
+
 </li>
 ```
 
