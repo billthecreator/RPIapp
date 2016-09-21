@@ -12,6 +12,8 @@ Below are some screens of how it looks at the moment. When I push a major update
 !["Admin Dashboard"](/screens/admin.png)
 
 The admin will have more control, edit links, colors, description, title, path, etc. While also monitoring the users who have an account.
+
+#### Admin App Options Dropdown
 !["App Options"](/screens/options.png)
 
 ## Screen of User Dashboard
