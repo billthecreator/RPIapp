@@ -18,7 +18,7 @@ The admin will have more control, edit links, colors, description, title, path, 
 #### Account Options Dropdown
 !["Account Options"](/screens/user_options.png)
 
-'''html
+```html
 <li class="dropdown">
     {{ g.user.username.upper() }}
     <i class="fa fa-caret-down"></i>
@@ -27,8 +27,9 @@ The admin will have more control, edit links, colors, description, title, path, 
     {% if g.user  %}
         <a href="{{ url_for('logout') }}">Sign out</a>
     {% endif %}
-</div>
-'''
+    </div>
+</li>
+```
 
 ## Screen of User Dashboard
 !["User Dashboard"](/screens/user.png)
